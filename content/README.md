@@ -1,1 +1,0 @@
-Use this folder for static files.
