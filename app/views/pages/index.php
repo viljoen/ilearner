@@ -17,8 +17,7 @@
 /* 
  
  */
-var_dump($data);
-
+require_once '../app/libraries/Database.php';
 
 ?>   
    
