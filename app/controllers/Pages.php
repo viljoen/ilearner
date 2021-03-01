@@ -34,7 +34,7 @@ class Pages extends Controller {
      }    
      public function login() {
         //echo 'Pages login Loaded';
-        $this->view('pages/login'); 
+        return $this->view('pages/login'); 
      }     
      public function logout() {
         //echo 'Pages logout Loaded';

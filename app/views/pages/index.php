@@ -11,13 +11,36 @@
     <title>Index Page</title>
   </head>
   <body>
+      
+<?php
+/* 
+  */
+require_once '../app/libraries/Database.php';
+require_once '../app/controllers/Pages.php';
+
+
+?>   
+   
     <h1>Index Page</h1>
+  
+    <a href="pages/login">Existing User? html</a>
+    
+    <br><!-- comment -->
+    
+    <a href="<?php echo $login; ?>">Login<a>
+            
+            <br>
+            
+    <a href="pages/signup">Register Account?<a>
+    
+    
  <?php
 
 /* 
  
  */
 require_once '../app/libraries/Database.php';
+require_once '../app/controllers/Pages.php';
 
 ?>   
    
