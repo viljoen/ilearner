@@ -5,7 +5,9 @@
         <group>
             <file>file:/Applications/MAMP/htdocs/ilearner/app/views/pages/index.php</file>
             <file>file:/Applications/MAMP/htdocs/ilearner/app/models/User.php</file>
+            <file>file:/Applications/MAMP/htdocs/ilearner/app/libraries/Controller.php</file>
             <file>file:/Applications/MAMP/htdocs/ilearner/app/libraries/Database.php</file>
+            <file>file:/Applications/MAMP/htdocs/ilearner/app/libraries/Core.php</file>
             <file>file:/Applications/MAMP/htdocs/ilearner/app/controllers/Pages.php</file>
         </group>
     </open-files>
