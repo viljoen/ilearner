@@ -10,6 +10,7 @@
  * Description of Application
  *
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
+ * @package app\core
  */
 
 namespace app\core;
@@ -18,5 +19,9 @@ class Application {
     public Router $router;
     public function __contruct() {
         $this->router = new Router();
+    }
+
+    public function run(){
+        //todo 
     }
 }

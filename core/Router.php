@@ -10,10 +10,14 @@
  * Description of Router
  *
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
+ * @package app\core
  */
 
 namespace app\core;
 
 class Router {
-    //put your code here
+    protected function $routes = [];
+    public function get ($path,$callback){
+        $this->routes [$path] = $callback;
+    }
 }
