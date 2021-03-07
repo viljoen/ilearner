@@ -5,6 +5,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//echo $_GET['url'];
+require_once 'navigation.php';
 
-require_once '../app/index.php';
+
