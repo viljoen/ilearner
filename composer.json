@@ -1,0 +1,11 @@
+{
+    "name": "cliveviljoen/ilearner",
+    "description": "SA's largest online learning platform",
+    "authors": [
+        {
+            "name": "Clive",
+            "email": "viljoen.clive.g@gmail.com"
+        }
+    ],
+    "require": {}
+}
