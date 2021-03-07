@@ -17,52 +17,54 @@ spl_autoload_register(function ($class_name){
 });
 
 //
-Route::set('marketing',function(){
+Route::set('index.php',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    Marketing::CreateView();
+    Index::CreateView('index');
+    Index::test();
 });
 
 Route::set('studentsignup',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    StudentSignup::CreateView();
+    StudentSignup::CreateView('studentsignup');
 });
 
 Route::set('signup',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorSignup::CreateView();
+    VendorSignup::CreateView('signup');
 });
 
 Route::set('login',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    Login::CreateView();
+    Login::CreateView('login');
 });
 
 Route::set('logout',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    Logout::CreateView();
+    Logout::CreateView('logout');
 });
 
 Route::set('vendorDashboard',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView();
+    VendorDashboard::CreateView('vendorDashboard');
 });
 
 Route::set('studentDashboard',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    StudentDashboard::CreateView();
+    StudentDashboard::CreateView('studentDashboard');
 });
 
-
-
-
-
+Route::set('estore',function(){
+    //echo 'Marketing';
+    //calling the marketing controller
+    Ecommerce::CreateView('estore');
+});
 
 
 
@@ -86,5 +88,3 @@ Route::set('/contact-form',function(){
 Route::set('/foo/([0-9]*)/bar',function($var1){
     echo $var1.' is a great number!';
 });
-
-//Route::run('/');

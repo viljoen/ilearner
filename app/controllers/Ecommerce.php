@@ -7,10 +7,10 @@
  */
 
 /**
- * Description of Marketing
+ * This is the controller of the online store for ilearner where you can buy/sell courses
  *
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
  */
-class Marketing extends Controller {
+class Ecommerce extends Controller{
     //put your code here
 }

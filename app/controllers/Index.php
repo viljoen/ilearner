@@ -7,18 +7,13 @@
  */
 
 /**
- * Description of Controller
+ * Description of Marketing
  *
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
  */
-class Controller extends Database{
-
+class Index extends Controller {
     
-    public static function CreateView($viewName){
-        
-        require_once('../app/views/'. $viewName . '.php');
-        //echo 'Controller Static View Created';
+    public static function test (){
+        print_r(self::query('SELECT * FROM users'));
     }
-    
-    
 }

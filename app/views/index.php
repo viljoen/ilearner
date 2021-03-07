@@ -7,12 +7,13 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>ilearner - SA's Online learning space</title>
     </head>
     <body>
         <?php
         // put your code here
-        echo "Vendor SignUp Page"
+        echo "Page Under Construction, email support@ilearner.co.za to learn more";
         ?>
+        <br><br>
     </body>
 </html>
