@@ -12,5 +12,9 @@
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
  */
 class Login extends Controller {
-    //put your code here
+        //Properties
+    
+    
+    
+    //Methods
 }

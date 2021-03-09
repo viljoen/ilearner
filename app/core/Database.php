@@ -13,14 +13,17 @@
  */
 class Database
 {
-    public static $dbHost = 'localhost:8889';
-    public static $dbUser = 'root';
-    public static $dbPass = 'root';
-    public static $dbName = 'ilearner';
-        
-    private static function connect()
+    //Properties
+    protected static $dbHost = 'localhost:8890';
+    protected static $dbUser = 'root';
+    protected static $dbPass = 'root';
+    protected static $dbName = 'ilearner';
+    
+    //Methods
+      
+    protected static function connect()
     {
-        $dsn = 'mysql:host=' . self::$dbHost . ';dbname=' . self::$dbName;
+        $dsn = 'mysql:host=' . $dbHost . ';dbname=' . $dbName;
         
         $options = array(
             //preventing driver timeouts when we are attempting to connect to the database, will also check if there is alreayd a connection with the database
@@ -28,32 +31,26 @@ class Database
             //Way to handle errors
           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
-        try {
+        $pdo = new PDO($dsn, $dbUser, $dbPass, $options);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $pdo;
+        
+       //try 
+       //{
             //creating and instance and setting pdo error mode to exception
-            $dbhandler = new PDO($dsn, self::$dbUser, self::$dbPass, $options);
+       // $dbhandler = new PDO($dsn, self::$dbUser, self::$dbPass, $options);
             
             //display success message
-            echo "You have successfully connected to the ilearner database!";
-        } catch (PDOException $e) {
-            $error = $e->getMessage();
+       //  echo "You have successfully connected to the mysql server!";
+      // } 
+      // catch (PDOException $e) 
+       //{
+       
+       // $error = $e->getMessage();
             //display error message
-            echo "Connection failed, reason:".$error;
-        }
-       
-       
-        //$pdo = new PDO('mysql:host=127.0.0.1;dbname=howCode;charset=utf8', 'root', '');
-    //$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //return $pdo;
-    }
+        //echo "Connection failed, reason:".$error;
+      //}
+    } 
 
-    public static function query($query, $params = array())
-    {
-        $statement = self::connect()->prepare($query);
-        $statement->execute($params);
-        if (explode(' ', $query)[0] == 'SELECT') {
-            $data = $statement->fetchAll();
-            return $data;
-        }
-    }
+ 
 }

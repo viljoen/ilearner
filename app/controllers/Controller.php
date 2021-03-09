@@ -12,7 +12,11 @@
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
  */
 class Controller extends Database{
-
+    //Properties
+    
+    
+    
+    //Methods
     
     public static function CreateView($viewName){
         

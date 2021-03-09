@@ -12,5 +12,9 @@
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
  */
 class Logout extends Controller {
-    //put your code here
+    //Properties
+    
+    
+    
+    //Methods
 }

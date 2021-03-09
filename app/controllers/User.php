@@ -7,20 +7,21 @@
  */
 
 /**
- * Description of Marketing
+ * Description of User
  *
  * @author Clive Viljoen <viljoenc@viljoentechnologies.com>
  */
-class Index extends Controller {
+class User extends Controller{
+    //properties
+    private $uid;
+    private $uFName;
+    private $uLName;
+    private $uPwd;
+    private $uEmail;
+    private $uCd;
     
-
-    //Properties
-    
-     
     //Methods
-       public static function test (){
-           
-     
-        }
-    
 }
+
+
+
