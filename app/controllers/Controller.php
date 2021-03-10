@@ -24,5 +24,13 @@ class Controller extends Database{
         //echo 'Controller Static View Created';
     }
     
+    public static function getUsers(){
+         $connect = $this->connect();
+         $sql = "SELECT * FROM 'user'";  
+         $stmnt = $connect->query($sql);
+         while ($row = $stmt->fetch()){
+             return $row;
+         }
+       }
     
 }

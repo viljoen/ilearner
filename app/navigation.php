@@ -21,7 +21,7 @@ Route::set('index.php',function(){
     //echo 'Marketing';
     //calling the marketing controller
     Index::CreateView('index');
-    //Index::test();
+    Index::getUsers();
 });
 
 Route::set('studentsignup',function(){

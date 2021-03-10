@@ -16,11 +16,9 @@ class Index extends Controller {
 
     //Properties
     
+
      
     //Methods
-       public static function test (){
-           
-     
-        }
-    
+
+
 }
