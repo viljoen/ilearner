@@ -23,6 +23,12 @@ class Controller extends Database{
         require_once('../app/views/'. $viewName . '.php');
         //echo 'Controller Static View Created';
     }
-    
+            public static function loadCss(){
+        $css = glob("https://code.getmdl.io/1.1.3/material.min.css", GLOB_BRACE);
+        foreach ($css as $cssname) {
+            echo "<link rel='stylesheet' href='$cssname'>";
+        }
+        
+        }
     
 }

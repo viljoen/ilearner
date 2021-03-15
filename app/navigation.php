@@ -13,6 +13,12 @@ spl_autoload_register(function ($class_name){
  else if(file_exists('../app/controllers/' . $class_name . '.php')) {
         include ('../app/controllers/' . $class_name . '.php');
     }
+  else if(file_exists('../app/models/' . $class_name . '.php')) {
+        include ('../app/models/' . $class_name . '.php');
+    }
+  else if(file_exists('../app/views/' . $class_name . '.php')) {
+        include ('../app/views/' . $class_name . '.php');
+    }      
     
 });
 
@@ -21,7 +27,7 @@ Route::set('index.php',function(){
     //echo 'Marketing';
     //calling the marketing controller
     Index::CreateView('index');
-    //Index::test();
+    Index::loadCss();
 });
 
 Route::set('studentsignup',function(){
