@@ -16,8 +16,9 @@ and open the template in the editor.
         <!-- Page Styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" type="text/css" <href="https://code.getmdl.io/1.3.0/material.min.css">
-        <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="../css/material.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        
     <style>
     #view-source {
       position: fixed;
@@ -43,7 +44,7 @@ and open the template in the editor.
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <img class="android-logo-image" src="../img/android-logo.png">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -58,13 +59,12 @@ and open the template in the editor.
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Phones</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Tablets</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Wear</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">TV</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Auto</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">One</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Play</a>
+
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="pricing">Pricing</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="signup">Sign Up</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="contactus">Contact Us</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login">Login</a>
+
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
@@ -84,7 +84,7 @@ and open the template in the editor.
 
       <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <img class="android-logo-image" src="images/android-logo-white.png">
+          <img class="android-logo-image" src="../img/android-logo-white.png">
         </span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="">Phones</a>
@@ -119,10 +119,10 @@ and open the template in the editor.
           <div class="logo-font android-slogan">be together. not the same.</div>
           <div class="logo-font android-sub-slogan">welcome to android... be yourself. do your thing. see what's going on.</div>
           <div class="logo-font android-create-character">
-            <a href=""><img src="images/andy.png"> create your android character</a>
+            <a href=""><img src="../img/andy.png"> create your android character</a>
           </div>
 
-          <a href="#screens">
+          <a href="">
             <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
               <i class="material-icons">expand_more</i>
             </button>
@@ -134,32 +134,32 @@ and open the template in the editor.
           <div class="android-screens">
             <div class="android-wear android-screen">
               <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/wear-silver-on.png">
-                <img class="android-screen-image" src="images/wear-black-on.png">
+                <img class="android-screen-image" src="../img/wear-silver-on.png">
+                <img class="android-screen-image" src="../img/wear-black-on.png">
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android Wear</a>
             </div>
             <div class="android-phone android-screen">
               <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/nexus6-on.jpg">
+                <img class="android-screen-image" src="../img/nexus6-on.jpg">
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Phones</a>
             </div>
             <div class="android-tablet android-screen">
               <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/nexus9-on.jpg">
+                <img class="android-screen-image" src="../img/nexus9-on.jpg">
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets</a>
             </div>
             <div class="android-tv android-screen">
               <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/tv-on.jpg">
+                <img class="android-screen-image" src="../img/tv-on.jpg">
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android TV</a>
             </div>
             <div class="android-auto android-screen">
               <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/auto-on.jpg">
+                <img class="android-screen-image" src="../img/auto-on.jpg">
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Coming Soon: Android Auto</a>
             </div>
@@ -193,11 +193,12 @@ and open the template in the editor.
           <div class="android-customized-section-image"></div>
         </div>
         <div class="android-more-section">
+            <a name="signup"></a>
           <div class="android-section-title mdl-typography--display-1-color-contrast">More from Android</div>
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
+                <img src="../img/more-from-1.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Get going on Android</h4>
@@ -215,7 +216,7 @@ and open the template in the editor.
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="images/more-from-4.png">
+                <img src="../img/more-from-4.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Create your own Android character</h4>
@@ -233,7 +234,7 @@ and open the template in the editor.
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="images/more-from-2.png">
+                <img src="../img/more-from-2.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Get a clean customisable home screen</h4>
@@ -251,7 +252,7 @@ and open the template in the editor.
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="images/more-from-3.png">
+                <img src="../img/more-from-3.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Millions to choose from</h4>
@@ -320,7 +321,7 @@ and open the template in the editor.
       </div>
     </div>
     <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/android-dot-com/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="../js/material.min.js"></script>
         
         <br><br>
     </body>
