@@ -133,6 +133,28 @@ a:hover{
     height: 90vhpx;
 }
 
+/* nav home */
+.nav-home{
+    height:5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+.nav-home li {
+    list-style: none;
+    float: left;
+}
+
+.nav-home a{
+    color:#F4F5F3;
+    text-decoration: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    display: block;
+    padding: 15px;
+}
+
 /* Footer */
 .footer-nav{
     height:5vh;

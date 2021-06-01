@@ -51,6 +51,10 @@ Route::set('login',function(){
     //echo 'Marketing';
     //calling the marketing controller
     Login::CreateView('login');
+    Index::loadCss();
+    Index::loadJs();
+    Index::loadHeader();
+    Index::loadFooter();
 });
 
 Route::set('logout',function(){
@@ -63,6 +67,10 @@ Route::set('vendorDashboard',function(){
     //echo 'Marketing';
     //calling the marketing controller
     VendorDashboard::CreateView('vendorDashboard');
+    Index::loadCss();
+    Index::loadJs();
+    Index::loadHeader();
+    Index::loadFooter();
 });
 
 Route::set('studentDashboard',function(){
