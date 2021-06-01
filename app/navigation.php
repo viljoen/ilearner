@@ -24,11 +24,16 @@ spl_autoload_register(function ($class_name){
 
 //
 Route::set('index.php',function(){
-    //echo 'Marketing';
+    //echo 'Index.php';
     //calling the marketing controller
     Index::CreateView('index');
     Index::loadCss();
+    Index::loadJs();
+    Index::loadHeader();
+    Index::loadFooter();
+    
 });
+
 
 Route::set('studentsignup',function(){
     //echo 'Marketing';
