@@ -155,6 +155,416 @@ a:hover{
     padding: 15px;
 }
 
+/* Login window */
+.login{
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 20 20 20px;  
+        padding: 80px;  
+        background: linear-gradient(to right, #ece9e6, #ffffff);  
+        border-radius: 15px ; 
+}
+
+.login label{
+    color:#545a60;
+    font-size: 17px; 
+}
+
+.login input,.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+.login input:hover, .btn:hover {
+  opacity: 1;
+}
+
+
+.login span {
+    color:#545a60;
+}
+
+.login a {
+    
+}
+
+.login h1 {
+    
+}
+
+.login h2{
+    
+}
+
+.login h3{
+    
+}
+
+.login h4{
+   color: #545a60;
+   font-family: 'Kiwi Maru', serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000066;
+    
+}
+
+.logintab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.logintab button {
+  background-color: inherit;
+  float: left;
+  border: 1px;
+  outline: 1p;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.logintab button:hover {
+  background-color: #ddd;
+}
+.logintab button.active {
+  background-color: #ccc;
+}
+
+.logintabcontent {
+  display: auto;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s;
+}
+
+.logintitle{
+    padding-bottom: 25px;
+ 
+}
+.login #Uname{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;     
+}
+
+.login #Pass{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;     
+}
+
+.login #captcha{
+   
+}
+
+.login #log{
+    width: 100px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background: blue;
+         
+     
+}
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+/* add course wizard */
+/* Style the form */
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
+/* Messenger Mailbox */
+
+.mailbox {
+  margin: 0px auto -100px;
+  position: relative;
+  background: #CCDDED;
+  border-radius: 0px 5px 0px 0px;
+  width: 90%; max-width: 960px;
+}
+
+.mailnav {
+  position: absolute;
+  top: 0px; bottom: 0px;
+  background: #EEE;
+  width: 200px;
+}
+
+.mailnav a {
+  display: block;
+  padding: 5px 10px;
+  color: #3D9FC4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.mailnav a.active {
+  background: #CCDDED;
+}
+
+.mailnav a:first-child {
+  margin: 10px 0px 10px;
+}
+
+.messages {
+  padding: 10px 10px 10px 210px;
+  width: 100%;
+}
+
+.actions-dropdown {
+  display: block;
+  float: right;
+  position: relative;
+  margin: 5px 10px 10px 0px;
+}
+
+.actions-dropdown label {
+  padding: 5px 10px;
+  background: #EEE;
+  color: #666;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions-dropdown label span {
+  color: #999;
+  font-size: 10px;
+}
+
+.actions-dropdown:hover ul {
+  display: block;
+}
+
+.actions-dropdown ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  background: #EEE;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.actions-dropdown li {
+  padding: 5px 10px;
+  color: #666;
+  cursor: pointer;
+}
+
+.actions-dropdown li:hover {
+  color: #000;
+}
+
+.actions-dropdown li:first-child {
+  margin-top: 5px;
+}
+
+input[name=search] {
+  display: block;
+  float: right;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background: #EEE;
+  font: 14px Tahoma, Geneva, sans-serif;
+  border-radius: 5px;
+}
+
+input[name=search]:focus {
+  outline: none;
+}
+
+.message {
+  clear: both;
+  margin-bottom: 5px;
+  position: relative;
+  padding: 5px;
+  background: #bbd0e4;
+  border-radius: 5px;
+}
+
+.message input {
+  position: absolute;
+  top: 8px; left: 10px;
+  width: 30px;
+}
+
+.message .sender {
+  display: block;
+  position: absolute;
+  left: 40px;
+  color: #000;
+  font-weight: bold;
+  width: 90px;
+}
+
+.message .title {
+  display: inline-block;
+  padding-left: 150px;
+  width: 100%;
+}
+
+.message .date {
+  position: absolute;
+  right: 10px;
+}
+
+/* chat message layout for messages */
+
+/* Chat containers */
+.chatcontainer {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.chatcontainer::after {
+  content: auto;
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.chatcontainer img {
+  float: left;
+  max-width: 60px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 5%;
+}
+
+/* Style the right image */
+.chatcontainer img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
 /* Footer */
 .footer-nav{
     height:5vh;

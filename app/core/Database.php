@@ -14,9 +14,9 @@
 class Database
 {
     //Properties
-    protected static $dbHost = 'localhost:8890';
+    protected static $dbHost = 'localhost';
     protected static $dbUser = 'root';
-    protected static $dbPass = 'root';
+    protected static $dbPass = '';
     protected static $dbName = 'ilearner';
     
     //Methods
@@ -28,6 +28,4 @@ class Database
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         return $pdo;
     } 
-
- 
 }

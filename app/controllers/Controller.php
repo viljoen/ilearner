@@ -54,5 +54,13 @@ class Controller extends Database{
             echo "$footname";
         }
         
-        }    
+        }
+        
+        public static function loadScripts(){
+        $scripts = glob("../app/views/scripts.php", GLOB_BRACE);
+        foreach ($script as $scriptname) {
+            echo "$scriptname";
+        }
+        
+        }  
 }

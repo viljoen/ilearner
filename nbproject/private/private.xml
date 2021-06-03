@@ -3,17 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/views/signup.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/controllers/Controller.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/core/Database.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/public/css/material.min.css</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/public/css/material.css</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/public/.htaccess</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/core/Route.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/navigation.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/controllers/Index.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/views/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/ilearner/app/views/login.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/views/courselisting.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/controllers/Courses.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/views/courseadd.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/navigation.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/views/login.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/core/Database.php</file>
+            <file>file:/C:/wamp64/www/ilearner/css/learn.css</file>
+            <file>file:/C:/wamp64/www/ilearner/app/views/dbtablecreate.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/controllers/Controller.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/views/courses.php</file>
+            <file>file:/C:/wamp64/www/ilearner/js/learn.js</file>
+            <file>file:/C:/wamp64/www/ilearner/app/views/header.php</file>
+            <file>file:/C:/wamp64/www/ilearner/app/controllers/DBTableCreate.php</file>
         </group>
     </open-files>
 </project-private>

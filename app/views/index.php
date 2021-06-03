@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            ilearner - africa's learning space
+            ilearner - africa's online learning space
         </title>
         <meta name="description" content="The HTML5 Herald">
         <meta name="author" content="SitePoint">
@@ -15,7 +15,7 @@
  <nav>
                
     <div class="logo">
-    <h4>iLearner - Africa's Learning Space</h4> </div>
+    <h4>iLearner - Africa's Online Learning Space</h4> </div>
 
             <ul class="nav-home">
                 
