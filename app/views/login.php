@@ -49,7 +49,7 @@ and open the template in the editor.
 
             <div id="Vendor" class ="logintabcontent">
                 <label><b>Username</label>
-                <input type ="text" name="Uname" id="Uname" placeholder "Username">
+                <input type ="email" name="Uname" id="Uname" placeholder "Username">
                 <br>
                 <br>
                 <label><b>Password</label>

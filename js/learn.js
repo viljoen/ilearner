@@ -52,7 +52,7 @@ function openUserType(evt, userType) {
   evt.currentTarget.className += " active";
 }
 
-//Add course wizard
+//Add Course, Add Programme, Add Class Group Wizard
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
@@ -88,7 +88,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    document.getElementById("addForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:

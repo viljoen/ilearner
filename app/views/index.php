@@ -1,4 +1,27 @@
-<!doctype html>
+<?php
+include_once 'testdbconnect.php';
+if (isset($_POST['username'])) {
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    try {
+        $sqlinsert = "INSERT INTO users (firstName, lastName, emailAddress, password, dateCreated)"
+                . "VALUES (:firstName,:lastName,:username,:password, now())";
+
+        $statement = $conn->prepare($sqlinsert);
+        $statement->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':username' => $username, ':password' => $hashed_password));
+
+        if ($statement->rowCount() == 1) {
+            $result = "<p>Registration Successful</p>";
+        }
+    } catch (PDOException $ex) {
+        $result = "<p>Registration Error:" . $ex->getMessage() . "</p>";
+    }
+}
+?><!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -34,10 +57,23 @@
 </head>
         
 <body>        
-        <div class="container">
-            
-            
-</div>
+    <div class="container">
+        <div class ="regform">
+            <h1>Vendor  Registration:</h1> 
+ <?php 
+ if(isset($result)) echo $result; 
+ ?>
+            <form method="post" id="regForm" action="">
+                <p><input type="text" name="firstName" id="name" placeholder="First name..." ></p>
+                <p><input type="text" name="lastName" id="surname" placeholder="Last name..." ></p>
+                <p><input type="email" name="username" id="uname" placeholder="E-mail..." ></p>
+                <p><input type="password" name="password" id="pass" placeholder="Password" ></p>
+                <input type="submit" name="signup" id="signup" value="Register">                   
+
+            </form>
+        </div>
+
+    </div>
         
         <script src="../js/learn.js"></script>
 <?php

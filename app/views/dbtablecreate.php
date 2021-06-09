@@ -54,7 +54,7 @@ include 'header.php';
                                 echo "Connected to the $db database successfully!";
                             }
                         } catch (PDOException $e) {
-                            echo $e->getMessage();
+                            echo "Connection failed reason:".$e->getMessage();
                         }
                         ?></h3>       
                     </div>

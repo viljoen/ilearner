@@ -19,7 +19,7 @@ include 'header.php';
             </div>
             </div>
             <div class="Content">
-                       
+                <p>Your are logged in as {firstname} {lastname}</p>          
 
  
               <h1>Vendor Dashboard</h1>  

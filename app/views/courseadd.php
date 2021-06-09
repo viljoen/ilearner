@@ -64,7 +64,7 @@ include 'header.php';
                 </div>
                 </div>
               <h1>Add Course</h1>
-              <form id="regForm" action="">
+              <form id="addForm" action="">
 
                   <h1>Register:</h1>
 
