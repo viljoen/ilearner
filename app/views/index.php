@@ -1,24 +1,76 @@
 <?php
+
+//NB this logic to be moved to the Vendor Signup Controller and model
+
+//add our database connection script
 include_once 'testdbconnect.php';
-if (isset($_POST['username'])) {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    try {
-        $sqlinsert = "INSERT INTO users (firstName, lastName, emailAddress, password, dateCreated)"
-                . "VALUES (:firstName,:lastName,:username,:password, now())";
+//process the form
+if (isset($_POST['signup'])) {
+    //initialize an array to store any error message from the form
+    $form_errors = array();
 
-        $statement = $conn->prepare($sqlinsert);
-        $statement->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':username' => $username, ':password' => $hashed_password));
+    //form validation
+    $required_fields = array('firstName', 'lastName', 'username', 'password');
 
-        if ($statement->rowCount() == 1) {
-            $result = "<p>Registration Successful</p>";
+    //loop through the required fields array
+    foreach ($required_fields as $name_of_field) {
+        if (!isset($_POST[$name_of_field]) || $_POST[$name_of_field] == NULL) {
+            $form_errors[] = $name_of_field ." is a required field";
         }
-    } catch (PDOException $ex) {
-        $result = "<p>Registration Error:" . $ex->getMessage() . "</p>";
+    }
+
+    //check if error array is empty, if yes process form data and insert the record
+    if (empty($form_errors)) {
+        //collect form data and store in variables
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        //hashing the password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        //inserting the data
+        try {
+            //creating the SQL insert statement
+            $sqlinsert = "INSERT INTO users (firstName, lastName, emailAddress, password, dateCreated)"
+                    . "VALUES (:firstName,:lastName,:username,:password, now())";
+            //use pdo to sanatize the data
+            $statement = $conn->prepare($sqlinsert);
+
+            //add the data into the database
+            $statement->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':username' => $username, ':password' => $hashed_password));
+
+            //check if one row was created
+            if ($statement->rowCount() == 1) {
+                $result = "<p>Registration Successful</p>";
+            }
+        }
+
+        //if data insert fails
+        catch (PDOException $ex) {
+            $result = "<p>Registration Error:" . $ex->getMessage() . "</p>";
+        }
+    } /*else {
+        if (count($form_errors) == 1) {
+            $result = "<p style='color: red;'> There was 1 error in the form<br>";
+
+            $result .= "<ul style='color: red;'>";
+            //loop through error array and display all items
+            foreach ($form_errors as $error) {
+                $result .= "<li> {$error} </li>";
+            }
+            $result .= "</ul></p>";
+        }
+    }*/ else {
+        $result = "<p style='color: red;'> There were " . count($form_errors) . " errors in the form<br>";
+
+        $result .= "<ul style='color: red;'>";
+        //loop through error array and display all items
+        foreach ($form_errors as $error) {
+            $result .= "<li> {$error}</li>";
+        }
+        $result .= "</ul></p>";
     }
 }
 ?><!doctype html>

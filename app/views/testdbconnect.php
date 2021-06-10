@@ -1,5 +1,5 @@
 <?php
-
+//NB This is needs to be setup in Core/Database.php and then this file to be removed
 $host = 'localhost';
 $db = 'ilearner';
 $user = 'root';
