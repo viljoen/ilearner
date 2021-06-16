@@ -55,6 +55,7 @@ Route::set('login',function(){
     Index::loadJs();
     Index::loadHeader();
     Index::loadFooter();
+    
 });
 
 

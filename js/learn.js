@@ -31,7 +31,7 @@ navSlide();
 
 //Login window tabs
 
-function openUserType(evt, userType) {
+/*function openUserType(evt, userType) {
   // Declare all variables
   var i, logintabcontent, logintablinks;
 
@@ -50,7 +50,7 @@ function openUserType(evt, userType) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(userType).style.display = "block";
   evt.currentTarget.className += " active";
-}
+}*/
 
 //Add Course, Add Programme, Add Class Group Wizard
 
