@@ -78,3 +78,154 @@ function show_errors($form_errors_array){
     $errors .="</ul></p>";
     return $errors;
  }
+ 
+ /**
+  * 
+  * @param type $message
+  * @param type $passfail
+  * @return type
+  */
+ function userMessage($message,$passfail = "Fail"){
+     if($passfail === "Pass"){
+         $data = "<p style='padding: 20px; border:1px solid gray; color: green;'>{$message}</p>";
+     }else{
+         $data = "<p style='padding: 20px; border:1px solid gray; color: red;'>{$message}</p>";
+     }
+     return $data;
+ }
+ 
+ /**
+  * 
+  * @param type $page
+  */
+ function redirectTo($page){
+     header("Location: http://localhost/ilearner/public/{$page}");            
+ }
+ 
+ /**
+  * 
+  * @param type $value
+  * @param type $conn
+  * @return boolean
+  */
+ function checkDuplicateUsername($value, $conn){
+     try {
+         $sqlQuery = "SELECT emailAddress FROM users WHERE emailAddress =:username";
+         $statement = $conn->prepare($sqlQuery);
+         $statement->execute(array(':username' => $value));
+         
+         if($row = $statement->fetch()){
+             return true;
+         }
+         return false;
+     }catch (PDOException $ex){
+         //handle exception
+     }
+ }
+ /**
+  * Try to fix these to work universaly
+  * @param type $table
+  * @param type $column_name
+  * @param type $value
+  * @param type $conn
+  * @return boolean
+  
+ function checkDuplicateEntries($table, $column_name, $value, $conn){
+     try {
+         $sqlQuery = "SELECT * FROM " .$table. " WHERE " .$column_name. " = $form_field";
+         $statement = $conn->prepare($sqlQuery);
+         $statement->execute(array(':'$form_field => $value));
+         
+         if($row = $statement->fetch()){
+             return true;
+         }
+         return false;
+     }catch (PDOException $ex){
+         //handle exception
+     }
+ }*/
+ 
+ /**
+  * Set cookie parameter
+  * @param type $userId
+  */
+ function rememberMe($userId){
+     $encryptCookieData = base64_encode("UaQteh5i4y3dntstemYODA($userId)");
+     // Cookie set to expire in about 30 days
+     setcookie("rememberUserCookie", $encryptCookieData, time()+60*60*24*100,"/");
+ }
+ 
+ /**
+  * 
+  * @param type $conn
+  * @return boolean
+  */
+ function isCookieValid($conn){
+     $isValid = false;
+     
+     if (isset($_COOKIE['rememberUserCookie'])){
+         
+      // Decode user data
+     $decryptCookieData = base64_decode($_COOKIE['rememberUserCookie']);
+     $userId = explode("UaQteh5i4y3dntstemYODA", $decryptCookieData);
+     $user_id = $userId[1];
+     
+     //checck if id exists in the database
+     $sqlQuery = "SELECT * FROM users WHERE userId = :id";
+     $statement = $conn->prepare($sqlQuery);
+     $statement->execute(array(':id' => $user_id));
+     
+     if($row = $statement->fetch()){
+         $id = $row['id'];
+         $username = $row['username'];
+         
+         //create a user session variable
+         $_SESSION['id'] = $id;
+         $_SESSION['username'] = $username;
+         $isValid = true;
+     }else {
+         //cookie ID is valid destroy session
+         $isValid = false;
+         signout();
+     }
+     
+     }
+     return $isValid;
+ }
+ /**
+  * 
+  */
+ function signout(){
+     unset($_SESSION['username']);
+     unset($_SESSION['id']);
+     
+     if(isset($_COOKIE['rememberUserCookie'])){
+         unset($_COOKIE['rememberUserCookie']);
+         setcookie('rememberUserCookie', null, -1, '/');
+     }
+     session_destroy();
+     /*session_regenerate_id(true);*/
+     redirectTo('index');
+ }
+ 
+ /**
+  * 
+  * @return boolean
+  */
+ function sessionTimer(){
+     $isValid = true;
+     $inactive = 60 * 2; //2 mins
+     $fingerprint = md5($_SERVER['REMOTE_ADDR'] .$_SERVER['HTTP_USER_AGENT']);
+     
+     if ((isset($_SESSION['fingerprint']) && $_SESSION['fingerprint'] != $fingerprint)){
+         $isValid = false;
+         signout();
+     }elseif ((isset ($_SESSION['last_active']) && (time() - $_SESSION['last_active']) > $inactive) &&$_SESSION['username']) {
+        $isValid = false;
+        signout();
+    }else{
+        $_SESSION['last_active'] = time();
+    }
+    
+    return  $isValid;
+ }

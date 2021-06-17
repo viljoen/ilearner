@@ -1,5 +1,8 @@
 <?php
-//add our sessions connection
+$page_title = "iLearner Login";
+?>
+
+<?php
 include_once 'sessions.php';
 //add our database connection script
 include_once 'testdbconnect.php';
@@ -18,7 +21,7 @@ if(empty($form_errors)){
     //collect form data
     $username = $_POST['username'];
     $password = $_POST['password'];
-          
+    /*isset($_POST['remember']) ? $remember = $_POST['remember'] : $remember = ""; */    
     
     //check if user exist in database
     $sqlQuery = "SELECT * FROM users WHERE emailAddress = :username";
@@ -33,25 +36,28 @@ if(empty($form_errors)){
         if(password_verify($password, $hashed_password)){
             $_SESSION['userId'] = $id;
             $_SESSION['username'] = $username;
-            header('Location: http://localhost/ilearner/public/vendorDashboard');
+            
+            $fingerprint = md5($_SERVER['REMOTE_ADDR'] .$_SERVER['HTTP_USER_AGENT']);
+            $_SESSION['last_active'] = time();
+            $_SESSION['fingerprint'] = $fingerprint;
+            
+            /*if($remember === "yes"){
+                rememberMe($id);
+            }*/
+            
+            redirectTo('vendorDashboard');
         }else{
-            $result = "<p style='padding: 20px: color: red; border: 1px solid gray;'> Invalid Username (Email Address) or password</p>";
+            $result = userMessage("Invalid Username (Email Address) or password");
         }
     }
     
 }else{
-    $result = "<p style='color: red;'> There were " . count($form_errors) . " errors in the form</p>";
+    $result = userMessage("There were " . count($form_errors) . " errors in the form");
 }
 
 }
 ?>
 
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <!doctype html>
 <html lang="en">
     <head>
@@ -73,8 +79,8 @@ and open the template in the editor.
 
         <ul class="nav-home">
 
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="/ilearner/public/#">Home</a></li>
+            <li><a href="index">Sign Up</a></li>
+            <li><a href="index">Home</a></li>
         </ul>
 
     </nav>    
@@ -102,25 +108,29 @@ and open the template in the editor.
             </div>
            
             <div id="Vendor" class ="logintabcontent">
-                    <label><b>Username</label>
-                    <input type ="email" name="username" >
+                <label><b>Username</label>
+                <input type ="email" name="username" >
+                <br>
+                <br>
+                <label><b>Password</label>
+                <input type ="password" name="password" >
+                <br>
+                <br>
+                <!--<input type ="checkbox" id="captcha"> <span> I am not a Robot </span>
+                <br>
+                <br>-->
+                <div class="checkbox">
+                    <label>
+                    <input type ="checkbox" name="remember" value="yes" id="remember"> <span> Remember Me </span>
+                    </label>
                     <br>
                     <br>
-                    <label><b>Password</label>
-                    <input type ="password" name="password" >
-                    <br>
-                    <br>
-                    <!--<input type ="checkbox" id="captcha"> <span> I am not a Robot </span>
-                    <br>
-                    <br>
-                    <input type ="checkbox" id="remember"> <span> Remember Me </span>
-                    <br>
-                    <br>-->
-                    <input type="submit" name="login" id="login" value="Log In">
-                    <br>
-                    <br>
-                    <h4 style="text-align:center"><a href="#">Forgot Password? </a></h4>
                 </div>
+                <input type="submit" name="login" id="login" value="Log In">
+                <br>
+                <br>
+                <h4 style="text-align:center"><a href="forgotpassword">Forgot Password? </a></h4>
+            </div>
 
             <!--<div id="Learner" class ="logintabcontent">
                 <label><b>Username</label>

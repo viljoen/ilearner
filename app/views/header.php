@@ -1,3 +1,8 @@
+<?php 
+include_once 'sessions.php';
+$page_title = "ilearner - africa's online learning space"
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -8,7 +13,7 @@ and open the template in the editor.
     <head>
         <meta charset="utf-8">
         <title>
-            ilearner - africa's online learning space
+            <?php if(isset($page_title)) echo $page_title;?>
         </title>
         <meta name="description" content="The HTML5 Herald">
         <meta name="author" content="SitePoint">
@@ -20,18 +25,19 @@ and open the template in the editor.
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
-                <div class="line3"></div>
+               <div class="line3"></div>
+
+
             </div>            
-                      
-        
-            
+               
+         
 
 
 <div class="logo">
     <h4>iLearner - Africa's Online Learning Space</h4> </div>
 
             <ul class="nav-links" id="myMenu"><input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-                
+                 
                     <li><a href="vendorDashboard">iDashboard</a></li>
                     <ul>
                         <li><a href="#">iDashboardConfig</a></li>
@@ -116,8 +122,9 @@ and open the template in the editor.
                             <li><a href="#">iSubscribe</a></li>
                             <li><a href="#">iTicket Check</a></li>
                         </ul>-->
-                    <br>    
-                    <li><a href="logout">iLogout</a></li>
+                    <br>
+                     
+                    <li><a href="logout">iLogout </a></li>
                     <br>
                 </ul>
             

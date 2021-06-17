@@ -1,7 +1,7 @@
 <?php
 
 //NB this logic to be moved to the Vendor Signup Controller and model
-
+include_once 'sessions.php';
 //add our database connection script
 include_once 'testdbconnect.php';
 //add our database validation scripts
@@ -34,14 +34,22 @@ if (isset($_POST['signup'])) {
             $form_errors[] = $name_of_field ." is a required field";
         }
     }*/
-
-    //check if error array is empty, if yes process form data and insert the record
-    if (empty($form_errors)) {
-        //collect form data and store in variables
+    
+    //collect form data and store in variables
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $username = $_POST['username'];
         $password = $_POST['password'];
+        
+    if(checkDuplicateUsername($username, $conn)){
+        $result = userMessage("Email address already exists, Please enter a different email address. <br> If you are registered user<a  href='login'>Login</a> or <a href='forgotpassword'>Reset</a> your password");
+    }
+    /*if(checkDuplicateEntries("users", "emailAddress", $username, $conn)){
+        $result = userMessage("Email address already exists, Please enter a different email address. <br> If you are registered user<a  href='login'>Login</a> or <a href='forgotpassword'>Reset</a> your password");
+    }*/
+    //check if error array is empty, if yes process form data and insert the record
+    elseif (empty($form_errors)) {
+        
         //hashing the password
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -58,13 +66,13 @@ if (isset($_POST['signup'])) {
 
             //check if one row was created
             if ($statement->rowCount() == 1) {
-                $result = "<p style='padding: 20px; border:1px solid gray; color: green;'>Registration Successful</p>";
+                $result = userMessage("Registration Successful","Pass");
             }
         }
 
         //if data insert fails
         catch (PDOException $ex) {
-            $result = "<p style='padding: 20px; border:1px solid gray; color: red;'>Registration Error:" . $ex->getMessage() . "</p>";
+            $result = userMessage("Registration Error:" . $ex->getMessage());
         }
     } /*else {
         if (count($form_errors) == 1) {
@@ -78,7 +86,7 @@ if (isset($_POST['signup'])) {
             $result .= "</ul></p>";
         }
     }*/ else {
-        $result = "<p style='color: red;'> There were " . count($form_errors) . " errors in the form</p>";
+        $result = userMessage("There were " . count($form_errors) . " errors in the form");
 
         $result .= "<ul style='color: red;'>";
         //loop through error array and display all items

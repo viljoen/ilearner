@@ -1,13 +1,12 @@
-<!doctype html>
-
 <?php
-//first include the session start
 include_once 'sessions.php';
-//second include header
-include 'header.php';
+//include header
+include_once 'header.php';
 //then include any other required
-
+include_once 'testdbconnect.php';
+include_once 'vendorsignupisvalid.php';
 ?>
+
 <?php if (!isset($_SESSION['username'])): ?>
                     <p style="background-color: white;"> Your are currently not logged in <a href="login">Login</a> Not Yet a member? <a href ="index">Signup</a></p>
                 <?php else: ?>
@@ -28,13 +27,16 @@ include 'header.php';
                 </div>
             </div>
             <div class="Content">
+                <p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username']; ?> , you are now viewing the:</p>
                 
-
-
                 <h1>Vendor Dashboard</h1>  
+
+
+                
             </div>
             <div class="InfoPanel">
-                <p> You are logged in as " <?php if (isset($_SESSION['username'])) echo $_SESSION['username']; ?> " <a href="logout">Logout</a></p> 
+                <p>You have been inactive in for <i><?php echo sessionTimer();?></i> mins.<p>
+                    <p>Your session will terminate after of 2 inactive mins.<p>
             </div>
 </div>
        
@@ -46,7 +48,9 @@ include 'scripts.php';
 ?>
     
     </body>
-<?php endif ?> 
+<?php 
+endif 
+?> 
 
 <?php
 

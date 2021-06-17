@@ -1,7 +1,8 @@
 <?php
 
 include_once 'sessions.php';
+include_once 'vendorsignupisvalid.php';
 
 session_destroy();
 
-header('Location: http://localhost/ilearner/public/login');
+redirectTo('login');

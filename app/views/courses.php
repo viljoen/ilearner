@@ -1,9 +1,15 @@
 <!doctype html>
 <?php
-
+//first include the session start
+include_once 'sessions.php';
+//second include header
 include 'header.php';
+//then include any other required
 
 ?>
+<?php if (!isset($_SESSION['username'])): ?>
+                    <p style="background-color: white;"> Your are currently not logged in <a href="login">Login</a> Not Yet a member? <a href ="index">Signup</a></p>
+                <?php else: ?>
     <body>
 
         
@@ -86,7 +92,7 @@ include 'header.php';
               
             </div>
             <div class="InfoPanel">
-                              <div class="month">
+                <div class="month">
                     <ul>
                         <li class="prev">&#10094;</li>
                         <li class="next">&#10095;</li>
@@ -170,7 +176,9 @@ include 'scripts.php';
 ?>
     
     </body>
-
+<?php 
+endif 
+?> 
 <?php
 
 include 'footer.php';

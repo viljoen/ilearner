@@ -58,6 +58,16 @@ Route::set('login',function(){
     
 });
 
+Route::set('forgotpassword',function(){
+    //echo 'Marketing';
+    //calling the marketing controller
+    Login::CreateView('forgotpassword');
+    Index::loadCss();
+    Index::loadJs();
+    Index::loadHeader();
+    Index::loadFooter();
+    
+});
 
 Route::set('vendorDashboard',function(){
     //echo 'Marketing';
