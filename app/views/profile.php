@@ -1,15 +1,15 @@
 <!doctype html>
 <?php
-
-include 'header.php';
-
 $page_title = "iProfile";
+include 'header.php';
+include_once 'profilefetch.php';
 
 ?>
 
 <?php if (!isset($_SESSION['username'])): ?>
                     <p style="background-color: white;"> Your are currently not logged in <a href="login">Login</a> Not Yet a member? <a href ="index">Signup</a></p>
                 <?php else: ?>
+                    
     <body>
 
         
@@ -34,64 +34,82 @@ $page_title = "iProfile";
             </div>
             </div>
             <div class="Content">
-             <h1>Profile</h1>     
-                <secion>
-                    <table>
-                        <tr>
-                            <th>
-                               Email address:
-                            </th>
-                            <td>
-                                <?php if(isset($username)) echo $username;?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Date joined:
-                            </th>
-                            <td>
-                                <?php if(isset($date_joined)) echo $date_joined;?>
-                            </td>
-                        </tr>
-                                                <tr>
-                            <th>
-                                Firstname:
-                            </th>
-                            <td>
-                                Table data
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Lastname:
-                            </th>
-                            <td>
-                                Table data
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Contact Number:
-                            </th>
-                            <td>
-                                Table data
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                
-                            </th>
-                            <td>
-                                <a href="editProfile.php?user_identity=<?php if(isset($encode_id)) echo $encode_id; ?>">
-                                    <span>
-                                        Edit Profile
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
 
-                    </table>
-                </secion>
+                
+             <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];
+             echo "<br>";
+              if(isset($_SESSION['userId'])) echo $_SESSION['userId'];?>
+                        
+             <h1>Profile</h1>     
+             <secion class="profile">
+                     <table class="table1">
+                         <tr>
+                             <th>
+                                 Email address:
+                             </th>
+                             <td>
+                                 <?php if (isset($username))echo $username; ?>
+                             </td>
+                         </tr>
+                         <tr>
+                             <th>
+                                 Date joined:
+                             </th>
+                             <td>
+                                 <?php if (isset($dateJoined)){
+                                     echo $dateJoined;
+                                     
+                                 } 
+                                 ?>
+                             </td>
+                         </tr>
+                         <tr>
+                             <th>
+                                 Firstname:
+                             </th>
+                             <td>
+                                 <?php if (isset($firstName)) echo $firstName;?>
+                             </td>
+                         </tr>
+                         <tr>
+                             <th>
+                                 Lastname:
+                             </th>
+                             <td>
+                                 <?php if (isset($lastName)){ 
+                                     echo $lastName; 
+                                     
+                                 }
+                                 ?>
+                             </td>
+                         </tr>
+                         <<tr>
+                             <th>
+                                 Contact Number:
+                             </th>
+                             <td>
+                                 <?php /*if (isset($contactNumber)){
+                                     echo $contactNumber; 
+                                     
+                                 }*/
+                                 ?>
+                             </td>
+                         </tr>
+                         <tr>
+                             <th>
+
+                             </th>
+                             <td>
+                                 <a href="editProfile.php?user_identity=<?php if (isset($encode_id)) echo $encode_id; ?>">
+                                     <span>
+                                         Edit Profile
+                                     </span>
+                                 </a>
+                             </td>
+                         </tr>
+
+                     </table>
+                 </secion>
                 
 
                 <!-- The Modal -->
@@ -133,7 +151,7 @@ include 'scripts.php';
 ?>
     
     </body>
-    <?php 
+<?php 
 endif 
 ?> 
 

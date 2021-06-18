@@ -916,6 +916,32 @@ button{
 .session{
     display: none;
 }
+
+/* Profile */
+
+.profile{
+    
+}
+
+.table1{
+    
+}
+
+.table1 .tr{
+    
+    border-width: 2px;
+    border-color: blue;
+}
+
+.table1 .th{
+    
+}
+  
+.table1 .td{
+    
+ 
+}
+  
   
 /* Newer Monitors */
 @media screen and (max-width: 2560px){

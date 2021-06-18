@@ -1,11 +1,10 @@
 <?php
-include_once 'sessions.php';
-//include header
+$page_title = "iDashboard";
 include_once 'header.php';
 //then include any other required
 include_once 'testdbconnect.php';
 include_once 'vendorsignupisvalid.php';
-$page_title = "iDashboard";
+
 ?>
 
 <?php if (!isset($_SESSION['username'])): ?>
@@ -28,7 +27,7 @@ $page_title = "iDashboard";
                 </div>
             </div>
             <div class="Content">
-                <p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username']; ?> , you are now viewing the:</p>
+                <p>Welcome <b> <?php if (isset($_SESSION['username'])) echo $_SESSION['username']; ?> </b>, you are now viewing the:</p>
                 
                 <h1>Vendor Dashboard</h1>  
 
@@ -44,7 +43,7 @@ $page_title = "iDashboard";
                     <?php echo $_SERVER['REMOTE_ADDR']."<br>". $_SERVER['HTTP_USER_AGENT']; 
                     echo "<br>" .time();
                     if(isset($_SESSION['last_active'])){
-                        echo "<br>"  .$_SESSION['last_active'];
+                        echo "<br>" .$_SESSION['last_active'];
                     };
                     ?> </p>
             </div>

@@ -135,7 +135,6 @@ function show_errors($form_errors_array){
          $sqlQuery = "SELECT * FROM " .$table. " WHERE " .$column_name. " = $form_field";
          $statement = $conn->prepare($sqlQuery);
          $statement->execute(array(':'$form_field => $value));
-         
          if($row = $statement->fetch()){
              return true;
          }

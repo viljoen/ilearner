@@ -33,7 +33,7 @@ class Controller extends Database{
         }
     
     public static function loadJs(){
-        $js = glob("../jss/learn.jss", GLOB_BRACE);
+        $js = glob("../js/learn.jss", GLOB_BRACE);
         foreach ($js as $jsname) {
             echo "<link rel='stylesheet' href='$jsname'>";
         }

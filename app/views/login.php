@@ -1,5 +1,5 @@
 <?php
-$page_title = "iLearner Login";
+$page_title = "iLearner Login";''
 ?>
 
 <?php

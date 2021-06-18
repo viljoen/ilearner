@@ -1,7 +1,8 @@
 <!doctype html>
 <?php
-include 'header.php';
 $page_title = "iCourses";
+include 'header.php';
+
 
 ?>
 <?php if (!isset($_SESSION['username'])): ?>
