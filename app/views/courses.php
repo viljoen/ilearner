@@ -1,10 +1,7 @@
 <!doctype html>
 <?php
-//first include the session start
-include_once 'sessions.php';
-//second include header
 include 'header.php';
-//then include any other required
+$page_title = "iCourses";
 
 ?>
 <?php if (!isset($_SESSION['username'])): ?>

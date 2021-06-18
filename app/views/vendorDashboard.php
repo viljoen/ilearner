@@ -5,6 +5,7 @@ include_once 'header.php';
 //then include any other required
 include_once 'testdbconnect.php';
 include_once 'vendorsignupisvalid.php';
+$page_title = "iDashboard";
 ?>
 
 <?php if (!isset($_SESSION['username'])): ?>
@@ -35,8 +36,17 @@ include_once 'vendorsignupisvalid.php';
                 
             </div>
             <div class="InfoPanel">
-                <p>You have been inactive in for <i><?php echo sessionTimer();?></i> mins.<p>
-                    <p>Your session will terminate after of 2 inactive mins.<p>
+                <div class="session"><i><?php 
+                echo sessionTimer();
+                ?>
+                    </i></div>
+                    <p>
+                    <?php echo $_SERVER['REMOTE_ADDR']."<br>". $_SERVER['HTTP_USER_AGENT']; 
+                    echo "<br>" .time();
+                    if(isset($_SESSION['last_active'])){
+                        echo "<br>"  .$_SESSION['last_active'];
+                    };
+                    ?> </p>
             </div>
 </div>
        
@@ -52,6 +62,8 @@ include 'scripts.php';
 endif 
 ?> 
 
+   
+    
 <?php
 
 include 'footer.php';

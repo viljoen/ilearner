@@ -910,6 +910,12 @@ button{
   background: red;
   color: white;
 }
+
+/* Session Information*/
+
+.session{
+    display: none;
+}
   
 /* Newer Monitors */
 @media screen and (max-width: 2560px){

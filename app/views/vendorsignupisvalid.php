@@ -199,10 +199,10 @@ function show_errors($form_errors_array){
      unset($_SESSION['username']);
      unset($_SESSION['id']);
      
-     if(isset($_COOKIE['rememberUserCookie'])){
+     /*if(isset($_COOKIE['rememberUserCookie'])){
          unset($_COOKIE['rememberUserCookie']);
          setcookie('rememberUserCookie', null, -1, '/');
-     }
+     }*/
      session_destroy();
      /*session_regenerate_id(true);*/
      redirectTo('index');
@@ -214,7 +214,7 @@ function show_errors($form_errors_array){
   */
  function sessionTimer(){
      $isValid = true;
-     $inactive = 60 * 2; //2 mins
+     $inactive = 60 * 15; //15 mins
      $fingerprint = md5($_SERVER['REMOTE_ADDR'] .$_SERVER['HTTP_USER_AGENT']);
      
      if ((isset($_SESSION['fingerprint']) && $_SESSION['fingerprint'] != $fingerprint)){

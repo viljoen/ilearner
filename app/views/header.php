@@ -1,6 +1,6 @@
 <?php 
 include_once 'sessions.php';
-$page_title = "ilearner - africa's online learning space"
+
 ?>
 
 <!DOCTYPE html>

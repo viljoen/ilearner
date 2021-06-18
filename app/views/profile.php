@@ -3,7 +3,13 @@
 
 include 'header.php';
 
+$page_title = "iProfile";
+
 ?>
+
+<?php if (!isset($_SESSION['username'])): ?>
+                    <p style="background-color: white;"> Your are currently not logged in <a href="login">Login</a> Not Yet a member? <a href ="index">Signup</a></p>
+                <?php else: ?>
     <body>
 
         
@@ -28,7 +34,64 @@ include 'header.php';
             </div>
             </div>
             <div class="Content">
-                
+             <h1>Profile</h1>     
+                <secion>
+                    <table>
+                        <tr>
+                            <th>
+                               Email address:
+                            </th>
+                            <td>
+                                <?php if(isset($username)) echo $username;?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Date joined:
+                            </th>
+                            <td>
+                                <?php if(isset($date_joined)) echo $date_joined;?>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <th>
+                                Firstname:
+                            </th>
+                            <td>
+                                Table data
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Lastname:
+                            </th>
+                            <td>
+                                Table data
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Contact Number:
+                            </th>
+                            <td>
+                                Table data
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                
+                            </th>
+                            <td>
+                                <a href="editProfile.php?user_identity=<?php if(isset($encode_id)) echo $encode_id; ?>">
+                                    <span>
+                                        Edit Profile
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </secion>
                 
 
                 <!-- The Modal -->
@@ -55,7 +118,7 @@ include 'header.php';
                     </div>
 
                 </div>   
-              <h1>Profile</h1>    
+                
             </div>
             <div class="InfoPanel">
               <p>This is text text</br> This is test text <br> </p>  
@@ -70,6 +133,9 @@ include 'scripts.php';
 ?>
     
     </body>
+    <?php 
+endif 
+?> 
 
 <?php
 
