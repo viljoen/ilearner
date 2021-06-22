@@ -122,71 +122,71 @@ Route::set('programmes',function(){
 Route::set('courses',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('courses');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Courses::CreateView('courses');
+    Courses::loadCss();
+    Courses::loadJs();
+    Courses::loadHeader();
+    Courses::loadFooter();
 });
 
 Route::set('courselisting',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('courselisting');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Courses::CreateView('courselisting');
+    Courses::loadCss();
+    Courses::loadJs();
+    Courses::loadHeader();
+    Courses::loadFooter();
 });
 
 Route::set('coursemessenger',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('coursemessenger');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Courses::CreateView('coursemessenger');
+    Courses::loadCss();
+    Courses::loadJs();
+    Courses::loadHeader();
+    Courses::loadFooter();
 });
 
 Route::set('coursemessengermessage',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('coursemessengermessage');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Courses::CreateView('coursemessengermessage');
+    Courses::loadCss();
+    Courses::loadJs();
+    Courses::loadHeader();
+    Courses::loadFooter();
 });
 
 Route::set('courseadd',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('courseadd');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Courses::CreateView('courseadd');
+    Courses::loadCss();
+    Courses::loadJs();
+    Courses::loadHeader();
+    Courses::loadFooter();
 });
 
 Route::set('users',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('users');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    User::CreateView('users');
+    User::loadCss();
+    User::loadJs();
+    User::loadHeader();
+    User::loadFooter();
 });
 
 Route::set('learning',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    VendorDashboard::CreateView('learning');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Learning::CreateView('learning');
+    Learning::loadCss();
+    Learning::loadJs();
+    Learning::loadHeader();
+    Learning::loadFooter();
 });
 
 
@@ -194,30 +194,45 @@ Route::set('ecommerce',function(){
     //echo 'Marketing';
     //calling the marketing controller
     Ecommerce::CreateView('ecommerce');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Ecommerce::loadCss();
+    Ecommerce::loadJs();
+    Ecommerce::loadHeader();
+    Ecommerce::loadFooter();
 });
 
 Route::set('messenger',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    Ecommerce::CreateView('messenger');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Messenger::CreateView('messenger');
+    Messenger::loadCss();
+    Messenger::loadJs();
+    Messenger::loadHeader();
+    Messenger::loadFooter();
 });
 
 Route::set('profile',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    Ecommerce::CreateView('profile');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    Profile::CreateView('profile');
+    Profile::loadCss();
+    Profile::loadBsCss();
+    Profile::loadJs();
+    Profile::loadBsJs();
+    Profile::loadHeader();
+    Profile::loadFooter();
+    
+});
+
+Route::set('profileedit',function(){
+    //echo 'Marketing';
+    //calling the marketing controller
+    Profile::CreateView('profileedit');
+    Profile::loadCss();
+    Profile::loadBsCss();
+    Profile::loadJs();
+    Profile::loadBsJs();
+    Profile::loadHeader();
+    Profile::loadFooter();
 });
 
 Route::set('logout',function(){

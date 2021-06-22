@@ -32,13 +32,29 @@ class Controller extends Database{
         
         }
     
+    public static function loadBsCss(){
+        $css = glob("../css/bootstrap.min.css", GLOB_BRACE);
+        foreach ($css as $cssname) {
+            echo "<link rel='stylesheet' href='$cssname'>";
+        }
+        
+        }
+    
     public static function loadJs(){
-        $js = glob("../js/learn.jss", GLOB_BRACE);
+        $js = glob("../js/learn.js", GLOB_BRACE);
         foreach ($js as $jsname) {
             echo "<link rel='stylesheet' href='$jsname'>";
         }
         
         }
+    
+    public static function loadBsJs(){
+        $js = glob("../js/bootstrap.bundle.min.js", GLOB_BRACE);
+        foreach ($js as $jsname) {
+            echo "<link rel='stylesheet' href='$jsname'>";
+        }
+        
+        }    
         
     public static function loadHeader(){
         $head = glob("../app/views/header.php", GLOB_BRACE);

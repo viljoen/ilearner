@@ -1,8 +1,10 @@
-<!doctype html>
 <?php
-$page_title = "iProfile";
-include 'header.php';
+/* move this to a modal or have it function directy off the profile page*/
+$page_title = 'iProfile Edit';
+
+include_once 'header.php';
 include_once 'profilefetch.php';
+
 
 ?>
 
@@ -23,7 +25,7 @@ include_once 'profilefetch.php';
                     <li><a href="#">Nav3</a></li>
                     <li><a href="#">Nav4</a></li>
                     <li><a href="#">Nav5</a></li>    
-                    <li><a href="profileedit?user_identity=<?php if (isset($encode_id)) echo $encode_id; ?>">Edit Profile</a></li>
+                    <li><a href="profileedit">Edit Profile</a></li>
                     <li><a href="#">Nav7</a></li>
                     <li><a href="#">Nav8</a></li>
                     <li><a href="#">Nav9</a></li>
@@ -40,61 +42,32 @@ include_once 'profilefetch.php';
              echo "<br>";
               if(isset($_SESSION['userId'])) echo $_SESSION['userId'];?>
                         
-             <h1>Profile</h1>     
-             <section class="profile">
-                     <table class="table1">
-                         <tr>
-                             <th>
-                                 Email address:
-                             </th>
-                             <td>
-                                 <?php if (isset($username))echo $username; ?>
-                             </td>
-                         </tr>
-                         <tr>
-                             <th>
-                                 Date joined:
-                             </th>
-                             <td>
-                                 <?php if (isset($dateJoined)){
-                                     echo $dateJoined;
-                                     
-                                 } 
-                                 ?>
-                             </td>
-                         </tr>
-                         <tr>
-                             <th>
-                                 Firstname:
-                             </th>
-                             <td>
-                                 <?php if (isset($firstName)) echo $firstName;?>
-                             </td>
-                         </tr>
-                         <tr>
-                             <th>
-                                 Lastname:
-                             </th>
-                             <td>
-                                 <?php if (isset($lastName)){ 
-                                     echo $lastName; 
-                                     
-                                 }
-                                 ?>
-                             </td>
-                         </tr>
-                         <<tr>
-                             <th>
-                                 
-                             </th>
-                             <td>
-                                 <a href="profileedit?user_identity=<?php if (isset($encode_id)) echo $encode_id; ?>">Edit Profile</a>
-                             </td>
-                         </tr>
-                         
-                     </table>
-                 </section>
-                
+             <h1>Profile Edit</h1>
+             
+             <div>
+                 <?php if(isset($result)) echo $result; ?>
+                 <?php if(!empty($form_errors)) echo show_errors($form_errors); ?>
+             </div>
+             <div class="clearfix"></div>
+             <form method="post" action="">
+                 <div>
+                     <label for="emailField">
+                         Email
+                     </label>
+                     <input type="email" name="email" class="form-control" id="emailField" value="<?php if(isset($email)) echo $email;?>">
+                 </div>
+                 <div>
+                     <label for="firstnameField">
+                         Firstname
+                     </label>
+                     <input type="text" name="firstName" vslue="<?php if(isset($firstName)) echo $firstName; ?>" class="form-control" id="firstnameField">
+                 </div>
+                 <input type="hidden" name="hidden_id" value="<?php if(isset($userId)) echo $userId;?>">
+                 <button type="submit" name="updateProfile" class="">
+                     Update Profile
+                 </button>
+                 
+             </form>   
 
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
@@ -123,7 +96,7 @@ include_once 'profilefetch.php';
                 
             </div>
             <div class="InfoPanel">
-                                    <div class="session"><i><?php 
+                                   <div class="session"><i><?php 
                 echo sessionTimer();
                 ?>
                     </i></div>
@@ -156,3 +129,4 @@ endif
 include 'footer.php';
 
 ?>
+

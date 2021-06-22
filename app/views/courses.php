@@ -90,6 +90,18 @@ include 'header.php';
               
             </div>
             <div class="InfoPanel">
+                <div class="session"><i><?php 
+                echo sessionTimer();
+                ?>
+                    </i></div>
+                    <p>
+                    <?php echo $_SERVER['REMOTE_ADDR']."<br>". $_SERVER['HTTP_USER_AGENT']; 
+                    echo "<br>" .time();
+                    if(isset($_SESSION['last_active'])){
+                        echo "<br>" .$_SESSION['last_active'];
+                    };
+                    ?> </p>
+              
                 <div class="month">
                     <ul>
                         <li class="prev">&#10094;</li>
