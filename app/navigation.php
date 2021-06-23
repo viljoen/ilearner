@@ -215,9 +215,9 @@ Route::set('profile',function(){
     //calling the marketing controller
     Profile::CreateView('profile');
     Profile::loadCss();
-    Profile::loadBsCss();
+    Profile::loadMlCss();
     Profile::loadJs();
-    Profile::loadBsJs();
+    Profile::loadMlJs();
     Profile::loadHeader();
     Profile::loadFooter();
     
@@ -228,9 +228,9 @@ Route::set('profileedit',function(){
     //calling the marketing controller
     Profile::CreateView('profileedit');
     Profile::loadCss();
-    Profile::loadBsCss();
+    Profile::loadMlCss();
     Profile::loadJs();
-    Profile::loadBsJs();
+    Profile::loadMlJs();
     Profile::loadHeader();
     Profile::loadFooter();
 });

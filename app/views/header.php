@@ -18,9 +18,14 @@ and open the template in the editor.
         <meta name="description" content="The HTML5 Herald">
         <meta name="author" content="SitePoint">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="/css/learn.css">
+       
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="../css/learn.css">
+        <link rel="stylesheet" href="../css/material.min.css">
 <nav>
             <div class="burger">
                 <div class="line1"></div>

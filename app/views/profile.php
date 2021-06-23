@@ -40,7 +40,14 @@ include_once 'profilefetch.php';
              echo "<br>";
               if(isset($_SESSION['userId'])) echo $_SESSION['userId'];?>
                         
-             <h1>Profile</h1>     
+             <h1>Profile</h1> 
+             <div class="demo-card-image mdl-card mdl-shadow--2dp" background="">
+                     <div class="mdl-card__title mdl-card--expand"></div>
+                     <div class="mdl-card__actions">
+                         <img src="<?php if(isset($profile_picture)) echo $profile_picture; ?>" width="200" height="200">
+                         <span class="demo-card-image__filename">Profile Image</span>
+                     </div>
+                 </div>
              <section class="profile">
                      <table class="table1">
                          <tr>
@@ -138,8 +145,7 @@ include_once 'profilefetch.php';
             </div>
 </div>
         
-        <script src="../js/learn.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+
 <?php
 
 include 'scripts.php';

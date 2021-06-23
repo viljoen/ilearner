@@ -63,7 +63,7 @@ include_once 'profilefetch.php';
                      <input type="text" name="firstName" vslue="<?php if(isset($firstName)) echo $firstName; ?>" class="form-control" id="firstnameField">
                  </div>
                  <input type="hidden" name="hidden_id" value="<?php if(isset($userId)) echo $userId;?>">
-                 <button type="submit" name="updateProfile" class="">
+                 <button type="submit" name="updateProfile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
                      Update Profile
                  </button>
                  
@@ -111,8 +111,8 @@ include_once 'profilefetch.php';
             </div>
 </div>
         
-        <script src="../js/learn.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        
+        
 <?php
 
 include 'scripts.php';

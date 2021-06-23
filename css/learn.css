@@ -15,7 +15,7 @@ nav {
     background: -webkit-linear-gradient(to right, #c21500, #ffc500);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #c21500, #ffc500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    font-family: 'Kiwi Maru', serif;
+    font-family: 'Roboto', sans-serif;
     color: white;
 }
 .logo {
@@ -1055,25 +1055,25 @@ button{
 
 
 p {
-    font-family: 'Kiwi Maru', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     color: #000000;
 }
 h1 {
-    font-family: 'Kiwi Maru', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 36px;
     font-weight: bold;
     color: #000066;
 }
 h2{
-    font-family: 'Kiwi Maru', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: bold;
     color: #000066;
 }
 
 a {
-    font-family: 'Kiwi Maru', serif;  
+    font-family: 'Roboto', sans-serif;  
 }   
 
 

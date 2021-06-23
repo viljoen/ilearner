@@ -32,8 +32,8 @@ class Controller extends Database{
         
         }
     
-    public static function loadBsCss(){
-        $css = glob("../css/bootstrap.min.css", GLOB_BRACE);
+    public static function loadMlCss(){
+        $css = glob("../css/material.min.css", GLOB_BRACE);
         foreach ($css as $cssname) {
             echo "<link rel='stylesheet' href='$cssname'>";
         }
@@ -48,8 +48,8 @@ class Controller extends Database{
         
         }
     
-    public static function loadBsJs(){
-        $js = glob("../js/bootstrap.bundle.min.js", GLOB_BRACE);
+    public static function loadMlJs(){
+        $js = glob("../js/material.min.js", GLOB_BRACE);
         foreach ($js as $jsname) {
             echo "<link rel='stylesheet' href='$jsname'>";
         }

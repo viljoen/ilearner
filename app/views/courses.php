@@ -34,6 +34,9 @@ include 'header.php';
             </div>
             <div class="Content">
                 
+            <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];
+             echo "<br>";
+              if(isset($_SESSION['userId'])) echo $_SESSION['userId'];?>    
                 
 
                 <!-- The Modal -->
@@ -101,6 +104,8 @@ include 'header.php';
                         echo "<br>" .$_SESSION['last_active'];
                     };
                     ?> </p>
+              <p>This is text text</br> This is test text <br> </p>  
+            
               
                 <div class="month">
                     <ul>
@@ -178,7 +183,8 @@ include 'header.php';
             </div>
 </div>
         
-        <script src="../js/learn.js"></script>
+
+        
 <?php
 
 include 'scripts.php';

@@ -1,4 +1,7 @@
 
+<script src="../js/learn.js"></script>
+<script src="../js/material.min.js"></script>
+
 <script>// Search the Main Menu
  
  function myFunction() {

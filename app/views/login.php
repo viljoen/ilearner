@@ -71,6 +71,8 @@ if(empty($form_errors)){
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="../css/learn.css">
+        <link rel="stylesheet" href="../css/material.min.css">
+        
 
     <nav>
 
@@ -87,91 +89,112 @@ if(empty($form_errors)){
 </head>
 <body>
     <div class="login">
-         <?php 
-            if(isset($result)) echo $result;
-            ?>
-            <?php
-            if(!empty($form_errors)) echo show_errors($form_errors);
-            ?>
+        <?php
+        if (isset($result))
+            echo $result;
+        ?>
+        <?php
+        if (!empty($form_errors))
+            echo show_errors($form_errors);
+        ?>
 
-        <form method="post" id="login" action="">
-            <!--<div class ="logintitle">
-                <h4 style="text-align:center">Not a registered user? <a href="#">Register Now</a></h4>
-            </div>-->
-            <br>
-            <br>
 
-            <div class ="logintab">
-                <button class="logintablinks" onclick="openUserType(event, 'Vendor')" id="loginTabDefaultOpen" >Vendor </button>
+        <!--<div class ="logintitle">
+            <h4 style="text-align:center">Not a registered user? <a href="#">Register Now</a></h4>
+        </div>-->
+        <br>
+        <br>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Vendor</a>
+            <a href="#scroll-tab-2" class="mdl-layout__tab">Student</a>
 
-                <!--<button class="logintablinks" onclick="openUserType(event, 'Learner')">Learner</button>-->
-            </div>
-           
-            <div id="Vendor" class ="logintabcontent">
-                <label><b>Username</label>
-                <input type ="email" name="username" >
-                <br>
-                <br>
-                <label><b>Password</label>
-                <input type ="password" name="password" >
-                <br>
-                <br>
-                <!--<input type ="checkbox" id="captcha"> <span> I am not a Robot </span>
-                <br>
-                <br>-->
-                <div class="checkbox">
-                    <label>
-                    <input type ="checkbox" name="remember" value="yes" id="remember"> <span> Remember Me </span>
-                    </label>
-                    <br>
-                    <br>
+        </div>
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+                <div class="page-content">
+                    
+                    <form method="post" id="login" action="">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <label class="mdl-textfield__label"><b>Username</label>
+                            <input class="mdl-textfield__input"type ="email" name="username" >
+                            <br>
+                            <br>
+                            <label class="mdl-textfield__label"><b>Password</label>
+                            <input class="mdl-textfield__input" type ="password" name="password" >
+                            <br>
+                            <br>
+                            <!--<input type ="checkbox" id="captcha"> <span> I am not a Robot </span>
+                            <br>
+                            <br>-->
+                            <div class="mdl-checkbox__input">
+                                <label class="mdl-textfield__label">
+                                    <input class="mdl-textfield__input" type ="checkbox" name="remember" value="yes" id="remember"> <span> Remember Me </span>
+                                </label>
+                                <br>
+                                <br>
+                            </div>
+                            <input type="submit" name="login" id="login" value="Log In">
+                            <br>
+                            <br>
+                            <h4 style="text-align:center"><a href="forgotpassword">Forgot Password? </a></h4>
+                        </div>
+                    </form> 
+             </section>
+            <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+                <div class="page-content"><!-- Your content goes here --></div>
+            </section>
+
+        </main>
+
+
+                            <!--<div id="Learner" class ="logintabcontent">
+                                <label><b>Username</label>
+                                <input type ="text" name="Uname" id="Uname" placeholder "Username">
+                                <br>
+                                <br>
+                                <label><b>Password</label>
+                                <input type ="password" name="Pass" id="Pass" placeholder "Password">
+                                <br>
+                                <br>
+                                <input type ="checkbox" id="captcha"> <span> I am not a Robot </span>
+                                <br>
+                                <br>
+                                <input type ="checkbox" id="remember"> <span> Remember Me </span>
+                                <br>
+                                <br>
+                                <input type="submit" name="log" id="log" value="Log In">
+                                <br>
+                                <br>
+                                <h4 style="text-align:center"><a href="#">Forgot Password? </a></h4>
+                            </div>-->
+                            <br><!-- Remove this section later/update -->
+                            <p> -------------------------OR ---------------------- </p>
+                            <div id="Social" class ="Social">
+                                <a href="#" class="fb btn">
+                                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                                </a>
+                                <a href="#" class="twitter btn">
+                                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                                </a>
+                                <a href="#" class="google btn">
+                                    <i class="fa fa-google fa-fw"></i> Login with Google+
+                                </a>
+                            </div>
+
+
+                    </div>
+                </div>   
+
+
                 </div>
-                <input type="submit" name="login" id="login" value="Log In">
-                <br>
-                <br>
-                <h4 style="text-align:center"><a href="forgotpassword">Forgot Password? </a></h4>
-            </div>
 
-            <!--<div id="Learner" class ="logintabcontent">
-                <label><b>Username</label>
-                <input type ="text" name="Uname" id="Uname" placeholder "Username">
-                <br>
-                <br>
-                <label><b>Password</label>
-                <input type ="password" name="Pass" id="Pass" placeholder "Password">
-                <br>
-                <br>
-                <input type ="checkbox" id="captcha"> <span> I am not a Robot </span>
-                <br>
-                <br>
-                <input type ="checkbox" id="remember"> <span> Remember Me </span>
-                <br>
-                <br>
-                <input type="submit" name="log" id="log" value="Log In">
-                <br>
-                <br>
-                <h4 style="text-align:center"><a href="#">Forgot Password? </a></h4>
-            </div>-->
-            <br><!-- Remove this section later/update -->
-            <p> -------------------------OR ---------------------- </p>
-            <div id="Social" class ="Social">
-                <a href="#" class="fb btn">
-                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-                </a>
-                <a href="#" class="twitter btn">
-                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                </a>
-                <a href="#" class="google btn">
-                    <i class="fa fa-google fa-fw"></i> Login with Google+
-                </a>
-            </div>
 
-        </form>
     </div>
 
 
 
     <script src="../js/learn.js"></script>
+    <script src="../js/material.min.js"></script>
     <?php
     include 'scripts.php';
     ?>    
