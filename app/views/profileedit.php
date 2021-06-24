@@ -2,7 +2,7 @@
 /* move this to a modal or have it function directy off the profile page*/
 $page_title = 'iProfile Edit';
 
-include_once 'header.php';
+Profile::loadHeader();
 include_once 'profilefetch.php';
 
 

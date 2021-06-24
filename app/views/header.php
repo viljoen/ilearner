@@ -1,5 +1,6 @@
-<?php 
-include_once 'sessions.php';
+<?php
+/* need to find a function to call to load the session in the header*/
+include_once '../app/core/Session.php';
 
 ?>
 
@@ -24,8 +25,12 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-        <link rel="stylesheet" href="../css/learn.css">
-        <link rel="stylesheet" href="../css/material.min.css">
+        <?php
+        Header::loadCss();
+        Header::loadMlCss();
+        /*<link rel="stylesheet" href="../css/learn.css">
+        <link rel="stylesheet" href="../css/material.min.css">*/
+        ?>
 <nav>
             <div class="burger">
                 <div class="line1"></div>

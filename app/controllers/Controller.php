@@ -18,16 +18,32 @@ class Controller extends Database{
     
     //Methods
     
-    public static function CreateView($viewName){
-        
-        require_once('../app/views/'. $viewName . '.php');
+    public static function CreateView($viewName) {
+
+        require_once('../app/views/' . $viewName . '.php');
         //echo 'Controller Static View Created';
     }
-           
+
+    public static function loadHeader() {
+        require_once('../app/views/header.php');
+    }
+
+    public static function loadFooter() {
+        require_once('../app/views/footer.php');
+    }
+
+    public static function loadScripts() {
+        require_once('../app/views/scripts.php');
+    }
+    
+    public static function startSession() {
+        require_once('../app/core/Session.php');
+    }
+
     public static function loadCss(){
         $css = glob("../css/learn.css", GLOB_BRACE);
         foreach ($css as $cssname) {
-            echo "<link rel='stylesheet' href='$cssname'>";
+            echo "<link rel='stylesheet' href='$cssname'><br>";
         }
         
         }
@@ -35,7 +51,7 @@ class Controller extends Database{
     public static function loadMlCss(){
         $css = glob("../css/material.min.css", GLOB_BRACE);
         foreach ($css as $cssname) {
-            echo "<link rel='stylesheet' href='$cssname'>";
+            echo "<link rel='stylesheet' href='$cssname'><br>";
         }
         
         }
@@ -43,7 +59,7 @@ class Controller extends Database{
     public static function loadJs(){
         $js = glob("../js/learn.js", GLOB_BRACE);
         foreach ($js as $jsname) {
-            echo "<link rel='stylesheet' href='$jsname'>";
+            echo "<link rel='stylesheet' href='$jsname'><br>";
         }
         
         }
@@ -51,32 +67,10 @@ class Controller extends Database{
     public static function loadMlJs(){
         $js = glob("../js/material.min.js", GLOB_BRACE);
         foreach ($js as $jsname) {
-            echo "<link rel='stylesheet' href='$jsname'>";
+            echo "<link rel='stylesheet' href='$jsname'><br>";
         }
         
         }    
         
-    public static function loadHeader(){
-        $head = glob("../app/views/header.php", GLOB_BRACE);
-        foreach ($head as $headname) {
-            echo "$headname";
-        }
-        
-        }
-    
-        public static function loadFooter(){
-        $foot = glob("../app/views/footer.php", GLOB_BRACE);
-        foreach ($foot as $footname) {
-            echo "$footname";
-        }
-        
-        }
-        
-        public static function loadScripts(){
-        $scripts = glob("../app/views/scripts.php", GLOB_BRACE);
-        foreach ($script as $scriptname) {
-            echo "$scriptname";
-        }
-        
-        }  
+  
 }

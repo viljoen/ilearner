@@ -1,7 +1,6 @@
 <!doctype html>
 <?php
 $page_title = "iProfile";
-include 'header.php';
 include_once 'profilefetch.php';
 
 ?>
@@ -147,18 +146,12 @@ include_once 'profilefetch.php';
         
 
 <?php
+                    Profile::loadScripts();
+                    Profile::loadJs();
+                    Profile::loadMlJs();
 
-include 'scripts.php';
-
-?>
-    
+?>   
     </body>
 <?php 
 endif 
 ?> 
-
-<?php
-
-include 'footer.php';
-
-?>

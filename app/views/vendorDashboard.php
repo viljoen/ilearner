@@ -1,6 +1,5 @@
 <?php
 $page_title = "iDashboard";
-include_once 'header.php';
 //then include any other required
 include_once 'testdbconnect.php';
 include_once 'vendorsignupisvalid.php';
@@ -49,10 +48,11 @@ include_once 'vendorsignupisvalid.php';
             </div>
 </div>
        
-        <script src="../js/learn.js"></script>
+        
 <?php
-
-include 'scripts.php';
+                    VendorDashboard::loadScripts();
+                    VendorDashboard::loadJs();
+                    VendorDashboard::loadMlJs();
 
 ?>
     
@@ -60,11 +60,3 @@ include 'scripts.php';
 <?php 
 endif 
 ?> 
-
-   
-    
-<?php
-
-include 'footer.php';
-
-?>

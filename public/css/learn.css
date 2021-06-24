@@ -1,0 +1,1080 @@
+/* remove standard formatting */
+*{
+    margin: 0px;
+    padding: 0px
+        box-sizing: border-box;
+}
+
+/* navigation bar/menu behaviour */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5vh;
+    background: #c21500;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c21500, #ffc500);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c21500, #ffc500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.logo {
+    color: #F4F5F3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-left: 0.5%;
+    margin-right: 2%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+
+
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color:#F4F5F3;
+    text-decoration: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.burger{
+    display: none;
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color:#F4F5F3;
+    margin: 5px;
+    transition: all 0.25s ease-in;
+
+}
+body {
+    background: linear-gradient(to right, #232526, #414345);
+}
+#mySearch {
+    width: 80%;
+    font-size: 13px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 12px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px
+}
+.SubMenu { 
+    order: 1; 
+    background: linear-gradient(to right, #000000, #434343);
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    width: 12%;
+    height: 90vh;
+
+
+}
+
+.MenuItems {
+    padding: 5px 5px 5px 5px;
+}
+
+.SubNav-links{
+    display: block;
+    justify-content: space-between;
+
+}
+
+.SubNav-links li {
+    list-style: none;
+}
+
+.SubNav-links a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: #F4F5F3;
+
+
+}
+a:hover{
+    background-color: #cdd1d2;
+}
+.Content { 
+    order: 2;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    width: 66%;
+    height: 90vh;   
+    overflow: auto;
+}
+.InfoPanel { 
+    order: 3;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    width: 18%;
+    height: 90vhpx;
+}
+
+/* nav home */
+.nav-home{
+    height:5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+.nav-home li {
+    list-style: none;
+    float: left;
+}
+
+.nav-home a{
+    color:#F4F5F3;
+    text-decoration: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    display: block;
+    padding: 15px;
+}
+
+/* Login window */
+.login{
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 20 20 20px;  
+        padding: 80px;  
+        background: linear-gradient(to right, #ece9e6, #ffffff);  
+        border-radius: 15px ; 
+}
+
+.login label{
+    color:#545a60;
+    font-size: 17px; 
+}
+
+.login input,.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+.login input:hover, .btn:hover {
+  opacity: 1;
+}
+
+
+.login span {
+    color:#545a60;
+}
+
+.login a {
+    
+}
+
+.login h1 {
+    
+}
+
+.login h2{
+    
+}
+
+.login h3{
+    
+}
+
+.login h4{
+   color: #545a60;
+   font-family: 'Kiwi Maru', serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000066;
+    
+}
+
+.logintab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.logintab button {
+  background-color: inherit;
+  float: left;
+  border: 1px;
+  outline: 1p;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.logintab button:hover {
+  background-color: #ddd;
+}
+.logintab button.active {
+  background-color: #ccc;
+}
+
+.logintabcontent {
+  display: auto;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s;
+}
+
+.logintitle{
+    padding-bottom: 25px;
+ 
+}
+.login #Uname{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;     
+}
+
+.login #Pass{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;     
+}
+
+.login #captcha{
+   
+}
+
+.login #log{
+    width: 100px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background: blue;
+         
+     
+}
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+/* add course wizard */
+/* Style the form */
+
+#addForm {
+  background-color: #f4ffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+/* Style the input fields */
+.step, input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+.input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
+
+/* user registration form */
+.regform{
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;   
+}  
+
+.regtab{
+    
+}
+.regstep{
+    
+}
+
+
+
+/* Messenger Mailbox */
+
+.mailbox {
+  margin: 0px auto -100px;
+  position: relative;
+  background: #CCDDED;
+  border-radius: 0px 5px 0px 0px;
+  width: 90%; max-width: 960px;
+}
+
+.mailnav {
+  position: absolute;
+  top: 0px; bottom: 0px;
+  background: #EEE;
+  width: 200px;
+}
+
+.mailnav a {
+  display: block;
+  padding: 5px 10px;
+  color: #3D9FC4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.mailnav a.active {
+  background: #CCDDED;
+}
+
+.mailnav a:first-child {
+  margin: 10px 0px 10px;
+}
+
+.messages {
+  padding: 10px 10px 10px 210px;
+  width: 100%;
+}
+
+.actions-dropdown {
+  display: block;
+  float: right;
+  position: relative;
+  margin: 5px 10px 10px 0px;
+}
+
+.actions-dropdown label {
+  padding: 5px 10px;
+  background: #EEE;
+  color: #666;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions-dropdown label span {
+  color: #999;
+  font-size: 10px;
+}
+
+.actions-dropdown:hover ul {
+  display: block;
+}
+
+.actions-dropdown ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  background: #EEE;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.actions-dropdown li {
+  padding: 5px 10px;
+  color: #666;
+  cursor: pointer;
+}
+
+.actions-dropdown li:hover {
+  color: #000;
+}
+
+.actions-dropdown li:first-child {
+  margin-top: 5px;
+}
+
+input[name=search] {
+  display: block;
+  float: right;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background: #EEE;
+  font: 14px Tahoma, Geneva, sans-serif;
+  border-radius: 5px;
+}
+
+input[name=search]:focus {
+  outline: none;
+}
+
+.message {
+  clear: both;
+  margin-bottom: 5px;
+  position: relative;
+  padding: 5px;
+  background: #bbd0e4;
+  border-radius: 5px;
+}
+
+.message input {
+  position: absolute;
+  top: 8px; left: 10px;
+  width: 30px;
+}
+
+.message .sender {
+  display: block;
+  position: absolute;
+  left: 40px;
+  color: #000;
+  font-weight: bold;
+  width: 90px;
+}
+
+.message .title {
+  display: inline-block;
+  padding-left: 150px;
+  width: 100%;
+}
+
+.message .date {
+  position: absolute;
+  right: 10px;
+}
+
+/* chat message layout for messages */
+
+/* Chat containers */
+.chatcontainer {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.chatcontainer::after {
+  content: auto;
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.chatcontainer img {
+  float: left;
+  max-width: 60px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 5%;
+}
+
+/* Style the right image */
+.chatcontainer img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+/* Footer */
+.footer-nav{
+    height:5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+.footer-nav li{
+    list-style: none;
+    float: left;
+
+}
+
+.footer-nav a{
+    color:#F4F5F3;
+    text-decoration: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    display: block;
+    padding: 15px;
+
+}
+
+/* Grid Card lists */
+.card-container {
+    width: 90%;
+    overflow-x: scroll;
+    display: flex;
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 3rem;
+}
+.card {
+    min-width: 300px;
+    height: 200px;
+    border-radius: 16px;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    box-shadow: -1rem 0 3rem #000;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    transition: 0.2s;
+}
+.date {
+    color: #8a8a8a;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0 1rem;
+}
+
+.tags div {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border: 3px solid #28242f;
+    border-radius: 2rem;
+}
+
+.card .category-title {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.card .card-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card .card-header {
+    margin-bottom: auto;
+}
+
+.card .trainer {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+}
+
+.author .info .caption {
+    color: #8a8a8a;
+}
+
+.card:not(:first-child) {
+    margin-left: -130px;
+}
+
+.card:hover {
+        transform: translateY(-1rem);
+    }
+    
+.card:hover~.card{
+    transform: translateX(130px);
+}
+/*Modal Button*/
+.myBtn{
+
+
+
+}
+
+button{
+    border-radius: 5px;
+    box-shadow: 3px 4px #888888;
+    background: #ada996; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    top:10vh;
+    -ms-transform: translateY(60%);
+    transform: translateY(50%);
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content li {
+    list-style: none;
+    border-bottom:1px solid brown;
+
+}
+
+.modal-content a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+    color: black;
+
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+/*Dashboard*/
+
+/*first row*/
+.main-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); /* Where the magic happens */
+    grid-auto-rows: 94px;
+    grid-gap: 20px;
+    margin: 20px;
+  }
+  
+  .overviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #d3d3;
+  }
+
+  /* Other data cards */
+  .main-cards {
+    column-count: 2;
+    column-gap: 20px;
+    margin: 20px;
+  }
+  
+  *.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #82bef6;
+    margin-bottom: 20px;
+    -webkit-column-break-inside: avoid;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+ /* Force varying heights to simulate dynamic content */
+  .cards:first-child {
+    height: 485px;
+  }
+
+  .cards:nth-child(2) {
+    height: 200px;
+  }
+
+  .cards:nth-child(3) {
+    height: 265px;
+  }
+
+/*Calendar*/
+/* Month header */
+.month {
+  padding: 15px 15px;
+  width: 90%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+/* Notification Badge*/
+
+.notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+/* Session Information*/
+
+.session{
+    display: none;
+}
+
+/* Profile */
+
+.profile{
+    
+}
+
+.table1{
+    
+}
+
+.table1 .tr{
+    
+    border-width: 2px;
+    border-color: blue;
+}
+
+.table1 .th{
+    
+}
+  
+.table1 .td{
+    
+ 
+}
+  
+  
+/* Newer Monitors */
+@media screen and (max-width: 2560px){
+    body{
+        overflow-x: hidden
+
+    }
+    .nav-links{
+        position: absolute;
+        left: 0px; 
+        height: 92vh;
+        top: 5vh;
+        background: #c21500;  /* fallback for old browsers */
+        display: inline-block;
+        flex-direction: column;
+        align-items: left;
+        width: 20%;
+        transform:translateX(-100%);
+        transition: transform 0.8s ease-in;
+        overflow: auto;
+        white-space: nowrap;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+
+    }
+    .nav-links li{
+        opacity: 1;
+    }
+
+    .burger{
+        display:block;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+    @keyframes navLinkFade{
+        from{
+            -webkit-opacity: 0;
+            opacity: 0;
+            -webkit-transform: translateX (50px);
+            transform: translateX (50px);
+        } 
+        to{
+            -webkit-opacity: 1;
+            opacity: 1;
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+
+        }
+    }
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{   
+        transform: rotate(45deg) translate(-5px,-6px);
+    }  
+}
+
+
+@media screen and (max-width: 1700px){
+    .nav-links{
+        width: 15%;
+
+    }
+}
+
+@media screen and (max-width: 1270px){
+    .nav-links{
+        width: 17%;
+
+    }
+}
+/* Smaller screens, older pc's*/
+@media screen and (max-width: 1024px){
+    .nav-links{
+        width: 20%;
+
+    }
+}
+/* Ipad screen */
+@media screen and (max-width: 768px){
+    .nav-links{
+        width: 25%;
+
+    }
+}
+@media screen and (max-width: 570px){
+    .nav-links{
+        width: 30%;
+
+    }
+}
+/* Mobile Phone portrait */
+@media screen and (max-width: 450px){
+    .nav-links{
+
+        width: 40%;
+
+    }
+}
+
+
+
+
+/* Font Standardisation */
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000066;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000066;
+}
+
+a {
+    font-family: 'Roboto', sans-serif;  
+}   
+
+
+

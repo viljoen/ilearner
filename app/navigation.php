@@ -18,7 +18,10 @@ spl_autoload_register(function ($class_name){
     }
   else if(file_exists('../app/views/' . $class_name . '.php')) {
         include ('../app/views/' . $class_name . '.php');
-    }      
+    }
+    else if(file_exists('.../public/js/' . $class_name . '.js')) {
+        include ('.../public/js/' . $class_name . '.js');
+    }  
     
 });
 
@@ -29,8 +32,6 @@ Route::set('index.php',function(){
     Index::CreateView('index');
     Index::loadCss();
     Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
     
 });
 
@@ -53,8 +54,7 @@ Route::set('login',function(){
     Login::CreateView('login');
     Index::loadCss();
     Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+
     
 });
 
@@ -72,11 +72,14 @@ Route::set('forgotpassword',function(){
 Route::set('vendorDashboard',function(){
     //echo 'Marketing';
     //calling the marketing controller
+    VendorDashboard::loadHeader();
+    VendorDashboard::loadCss();
     VendorDashboard::CreateView('vendorDashboard');
-    Index::loadCss();
-    Index::loadJs();
-    Index::loadHeader();
-    Index::loadFooter();
+    VendorDashboard::loadJs();
+    VendorDashboard::loadScripts();
+    VendorDashboard::loadFooter();
+        
+        
 });
 
 Route::set('notifications',function(){
@@ -213,13 +216,14 @@ Route::set('messenger',function(){
 Route::set('profile',function(){
     //echo 'Marketing';
     //calling the marketing controller
-    Profile::CreateView('profile');
+    Profile::loadHeader();
     Profile::loadCss();
     Profile::loadMlCss();
+    Profile::CreateView('profile');
     Profile::loadJs();
     Profile::loadMlJs();
-    Profile::loadHeader();
     Profile::loadFooter();
+    
     
 });
 
