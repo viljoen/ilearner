@@ -35,10 +35,20 @@ class Database {
       } */
 
     protected static function connect() {
-        $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
+        $host = 'localhost';
+        $db = 'ilearner';
+        $user = 'root';
+        $pass = '';
+        $charset = 'UTF8';
+
+
+        $dsn ="mysql:host=$host;dbname=$db;charset=$charset";
+
+        $options = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ];
 
         try {
-            $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
             $conn = new PDO($dsn, $user, $pass, $options);
 
@@ -46,7 +56,7 @@ class Database {
                 echo "Connected to the $db database successfully!";
             }
         } catch (PDOException $e) {
-            echo "Connection failed reason:" . $e->getMessage();
+            echo "Connection failed reason:" . $e->getMessage(),(int)$e->getCode();
         }
     }
 

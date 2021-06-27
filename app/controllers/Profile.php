@@ -9,7 +9,7 @@
 /**
  * Description of Profile
  *
- * @author viljo
+ * @author viljoenc@viljoentechnologies.com
  */
 class Profile extends Controller{
     //put your code here
@@ -45,18 +45,51 @@ class Profile extends Controller{
                 $id = $_SESSION['userId'];
             }
 
-            $sqlQuery = "SELECT * FROM users WHERE userId =:id";
-            $statement = $conn->prepare($sqlQuery);
-            $statement->execute(array(':id' => $id));
+            $conn =new Profile();
+            $host1 = self::$host;
+            $db1 = self::$db;
+            $pass1 = self::$pass;
+            $user1 = self::$user;
+            $charset = 'UTF8';
 
-            while ($rs = $statement->fetch()) {
-                $firstName = $rs['firstName'];
-                $lastName = $rs['lastName'];
-                $username = $rs['emailAddress'];
-                $dateJoined = strftime("%b %d, %Y", strtotime($rs["dateCreated"]));
+            $dsn ="mysql:host=$host1;dbname=$db1;charset=$charset";
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ];
+
+
+            try {
+
+                $conn = new PDO($dsn, $user1, $pass1, $options);
+
+                if ($conn) {
+                    $sqlQuery  = "SELECT * FROM users WHERE userId =:id";
+                    $statement = $conn->prepare($sqlQuery);
+                    $statement->execute(array(':id' => $id,));
+                    $statement->bindColumn (2, $firstName);
+                    $statement->bindColumn (3, $lastName);
+                    $statement->bindColumn (4, $username);
+                    $statement->bindColumn (11, $dateJoined);
+                }while ($rs = $statement->fetchAll(PDO::FETCH_ASSOC)) {
+
+                    $firstName  = $rs['firstName'];
+                    $lastName  = $rs['lastName'];
+                    $username  = $rs['emailAddress'];
+                    $dateJoined = strftime ( "%b %d, %Y" , strtotime ( $rs[ "dateCreated" ] ) );
+
+                    print_r ($rs) ;
+                 }
+
+
+
+            } catch (PDOException $e) {
+                echo "SQL query not executed:" . $e->getMessage()/*, (int) $e->getCode()*/;
             }
 
-            $user_pic = "../uploads/" . $username . ".jpg";
+
+
+
+            $user_pic = "../uploads/" . $_SESSION['userId'] . ".jpg";
             $default = "../uploads/UserProfileDefault.jpg";
 
             if (file_exists($user_pic)) {
@@ -76,7 +109,7 @@ class Profile extends Controller{
             //call the function to check empty field and merge the returned data into form_error array
             $form_errors = array_merge($form_errors, check_empty_fields($required_fields));
 
-            //collect form adata and store as variables
+            //collect form data and store as variables
             $username = $_POST['emailAddress'];
             $firstName = $_POST['firstName'];
             $hidden_id = $_POST['hidden_id'];
@@ -90,7 +123,7 @@ class Profile extends Controller{
                     $statement = $conn->prepare($sqlUpdate);
 
                     //update the record in the database
-                    $statement->execute(array(':emailAddress' => $username, ':email' => $email, ':id' => $hidden_id));
+                    $statement->execute(array(':emailAddress' => $username, ':firstname' => $firstName, ':id' => $hidden_id));
 
                     //check if one new row was created
                     if ($statement->rowCount() == 1) {

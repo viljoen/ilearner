@@ -1,18 +1,20 @@
 <!doctype html>
 <?php
 $page_title = "iProfile";
-include_once 'profilefetch.php';
+/*include_once 'profilefetch.php';
+$fetch = new Profile();
+$fetch->profileFetch();*/
 
 ?>
 
 <?php if (!isset($_SESSION['username'])): ?>
                     <p style="background-color: white;"> Your are currently not logged in <a href="login">Login</a> Not Yet a member? <a href ="index">Signup</a></p>
                 <?php else: ?>
-                    
+
     <body>
 
-        
-        
+
+
         <div class="container">
             <div class="SubMenu">
             <div class="MenuItems">
@@ -21,7 +23,7 @@ include_once 'profilefetch.php';
                     <li><a href="profile">Dashboard</a></li>
                     <li><a href="#">Nav3</a></li>
                     <li><a href="#">Nav4</a></li>
-                    <li><a href="#">Nav5</a></li>    
+                    <li><a href="#">Nav5</a></li>
                     <li><a href="profileedit?user_identity=<?php if (isset($encode_id)) echo $encode_id; ?>">Edit Profile</a></li>
                     <li><a href="#">Nav7</a></li>
                     <li><a href="#">Nav8</a></li>
@@ -34,12 +36,13 @@ include_once 'profilefetch.php';
             </div>
             <div class="Content">
 
-                
+
              <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];
              echo "<br>";
-              if(isset($_SESSION['userId'])) echo $_SESSION['userId'];?>
-                        
-             <h1>Profile</h1> 
+              if(isset($_SESSION['userId'])) echo $_SESSION['userId'];?> <br>
+
+
+             <h1>Profile</h1>
              <div class="demo-card-image mdl-card mdl-shadow--2dp" background="">
                      <div class="mdl-card__title mdl-card--expand"></div>
                      <div class="mdl-card__actions">
@@ -48,13 +51,18 @@ include_once 'profilefetch.php';
                      </div>
                  </div>
              <section class="profile">
+                 <?php
+                 echo Profile::profileFetch();
+                 ?>
                      <table class="table1">
                          <tr>
                              <th>
                                  Email address:
                              </th>
                              <td>
-                                 <?php if (isset($username))echo $username; ?>
+                                 <?php if (isset($username)) {
+                                     echo $username;
+                                 } ?>
                              </td>
                          </tr>
                          <tr>
@@ -64,8 +72,8 @@ include_once 'profilefetch.php';
                              <td>
                                  <?php if (isset($dateJoined)){
                                      echo $dateJoined;
-                                     
-                                 } 
+
+                                 }
                                  ?>
                              </td>
                          </tr>
@@ -74,7 +82,9 @@ include_once 'profilefetch.php';
                                  Firstname:
                              </th>
                              <td>
-                                 <?php if (isset($firstName)) echo $firstName;?>
+                                 <?php if (isset($firstName)){
+                                     echo $firstName;
+                                 } ?>
                              </td>
                          </tr>
                          <tr>
@@ -82,25 +92,25 @@ include_once 'profilefetch.php';
                                  Lastname:
                              </th>
                              <td>
-                                 <?php if (isset($lastName)){ 
-                                     echo $lastName; 
-                                     
+                                 <?php if (isset($lastName)){
+                                     echo $lastName;
+
                                  }
                                  ?>
                              </td>
                          </tr>
                          <<tr>
                              <th>
-                                 
+
                              </th>
                              <td>
                                  <a href="profileedit?user_identity=<?php if (isset($encode_id)) echo $encode_id; ?>">Edit Profile</a>
                              </td>
                          </tr>
-                         
+
                      </table>
                  </section>
-                
+
 
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
@@ -115,7 +125,7 @@ include_once 'profilefetch.php';
                         <li><a href="#">ListItem2</a></li>
                         <li><a href="#">ListItem3</a></li>
                         <li><a href="#">ListItem4</a></li>
-                        <li><a href="#">ListItem5</a></li>    
+                        <li><a href="#">ListItem5</a></li>
                         <li><a href="#">ListItem6</a></li>
                         <li><a href="#">ListItem</a></li>
                         <li><a href="#">ListItem8</a></li>
@@ -125,33 +135,33 @@ include_once 'profilefetch.php';
                         <li><a href="#">ListItem12</a></li>
                     </div>
 
-                </div>   
-                
+                </div>
+
             </div>
             <div class="InfoPanel">
-                                    <div class="session"><i><?php 
+                                    <div class="session"><i><?php
                 echo sessionTimer();
                 ?>
                     </i></div>
                     <p>
-                    <?php echo $_SERVER['REMOTE_ADDR']."<br>". $_SERVER['HTTP_USER_AGENT']; 
+                    <?php echo $_SERVER['REMOTE_ADDR']."<br>". $_SERVER['HTTP_USER_AGENT'];
                     echo "<br>" .time();
                     if(isset($_SESSION['last_active'])){
                         echo "<br>" .$_SESSION['last_active'];
                     };
                     ?> </p>
-              <p>This is text text</br> This is test text <br> </p>  
+              <p>This is text text</br> This is test text <br> </p>
             </div>
 </div>
-        
+
 
 <?php
                     Profile::loadScripts();
                     Profile::loadJs();
                     Profile::loadMlJs();
 
-?>   
+?>
     </body>
-<?php 
-endif 
-?> 
+<?php
+endif
+?>
