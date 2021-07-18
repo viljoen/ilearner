@@ -10,7 +10,12 @@
                 <img src="/img/Fam Crest.png" alt="Family Crest" class="src" style="height: 20rem">
                 <!-- this is the  test in the middle of the screen-->
                 <p> This is a test route parameter page</p><br>
-                <p> The detail parameter is: {{$id}}</p>
+                <p> UserId: {{$clients->id}}</p>
+                <p> First Name: {{$clients->first_name}}</p>
+                <p> Last Name: {{$clients->last_name}}</p>
+                <p> Email: {{$clients->email}}</p>
+                <p> Age: {{$clients->age}}</p>
+                <p> Date Created: {{$clients->created_at}}</p>
 
 
 
@@ -18,6 +23,9 @@
 
 
 
+            </div>
+            <div class="back-left dark:text-white">
+                <a href="/client" ><- back to all clients</a>
             </div>
         </div>
     </div>

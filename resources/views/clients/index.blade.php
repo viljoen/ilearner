@@ -9,11 +9,11 @@
             <div class="dark:text-white">
                 <img src="/img/Fam Crest.png" alt="Family Crest" class="src" style="height: 20rem">
                 <!-- this is the  test in the middle of the screen-->
-                <p> This is a test Profile Page!</p><br>
+                <p> Find your clients!</p><br>
 
                 @foreach ($clients as $client)
                     <div>
-                        {{$client->first_name}} - {{$client->last_name}} - {{$client->email}} - {{$client->age}}
+                        <a href="/client/{{$client->id}}">{{$client->first_name}} - {{$client->last_name}} - {{$client->email}} - {{$client->age}} </a>
                     </div>
                 @endforeach
 

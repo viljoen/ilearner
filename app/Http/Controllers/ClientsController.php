@@ -23,7 +23,9 @@ class ClientsController extends Controller
     }
 
     public function show($id){
-        return view('clients.show',['id' => $id]);
+
+        $clients = Clients::findOrFail($id);
+        return view('clients.show',['clients' => $clients]);
     }
 
     public function create(){
