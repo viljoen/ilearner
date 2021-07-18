@@ -8,23 +8,18 @@
     <title>iLearner</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/css/materialize.min.css" rel="stylesheet">
     <link   href="/css/ilearner.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-
-    </style>
-</head>
+ </head>
 
 <body>
 @yield('content')
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/ilearner.js"></script>
+@include('scripts.scripts')
 </body>
 <footer>
 

@@ -1,24 +1,42 @@
 @extends('layout.layout')
 
 @section('content')
-    <div class="antialiased">
-        <div
-            class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+               <h1> Find your clients!</h1><br>
+                <div class="button">
+                    <a class="waves-effect waves-light btn" href="/client/create"><i class="material-icons right">person_add</i>Add Client</a>
+                </div>
+
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th> First Name</th>
+                            <th> Last Name</th>
+                            <th> Email </th>
+                            <th> Age </th>
+                            <th> Date Created</th>
+                        </tr>
+                    </thead>
 
 
-            <div class="dark:text-white">
-                <img src="/img/Fam Crest.png" alt="Family Crest" class="src" style="height: 20rem">
-                <!-- this is the  test in the middle of the screen-->
-                <p> Find your clients!</p><br>
-
-                @foreach ($clients as $client)
-                    <div>
-                        <a href="/client/{{$client->id}}">{{$client->first_name}} - {{$client->last_name}} - {{$client->email}} - {{$client->age}} </a>
-                    </div>
-                @endforeach
-
+                    <tbody>
+                    @foreach ($clients as $client)
+                        <tr>
+                                <td>{{$client->id}}</td>
+                                <td><a href="/client/{{$client->id}}">{{$client->first_name}}</a></td>
+                                <td><a href="/client/{{$client->id}}">{{$client->last_name}}</a></td>
+                                <td><a href="/client/{{$client->id}}">{{$client->email}}</a></td>
+                                <td>{{$client->age}} </td>
+                                <td>{{$client->created_at}}</td>
 
 
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
 
             </div>
         </div>
