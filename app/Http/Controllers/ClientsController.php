@@ -11,15 +11,22 @@ class ClientsController extends Controller
       * This function is for the landing page of each section
       */
     public function index(){
-        $clients = Clients::all();
+        //$clients = Clients::all()
+        //$clients = Clients::orderBy ('age', 'desc')->get();
+        //$clients = Clients::where('first_name', 'Keaton')->get();
+        $clients = Clients::latest()->get();
 
-        return view ('client', [
+        return view ('clients.index', [
             'clients' => $clients,
 
         ]);
     }
 
     public function show($id){
-        return view('details',['id' => $id]);
+        return view('clients.show',['id' => $id]);
+    }
+
+    public function create(){
+        return view ('clients.create');
     }
 }

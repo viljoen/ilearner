@@ -9,13 +9,9 @@
             <div class="dark:text-white">
                 <img src="/img/Fam Crest.png" alt="Family Crest" class="src" style="height: 20rem">
                 <!-- this is the  test in the middle of the screen-->
-                <p> This is a test Profile Page!</p><br>
+                <p> Add a new client!</p><br>
 
-                @foreach ($test as $clients)
-                    <div>
-                        {{$clients->first_name}} - {{$clients->last_name}} - {{$clients->email}} - {{$clients->age}}
-                    </div>
-                @endforeach
+
 
 
 
@@ -24,4 +20,5 @@
         </div>
     </div>
 @endsection
+
 

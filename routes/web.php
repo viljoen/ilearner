@@ -55,7 +55,9 @@ Route::get('/user/{id}', function ($id) {
 });
 
 Route::get('/client', [ClientsController::class, 'index']);
+Route::get('/client/create', [ClientsController::class, 'create']);
 Route::get('/client/{id}', [ClientsController::class, 'show']);
+
 
 
 Route::get('/test', [TestController::class, 'index']);
