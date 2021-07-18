@@ -17,6 +17,44 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/courses', function () {
+    return view('courses');
+});
+
+
+Route::get('/courses/{id}', function ($id) {
+    /*
+     * use the $id variable to query the db for a record
+     */
+
+    return view('courseDetail',['id' => $id]);
+});
+
+Route::get('/learning', function () {
+    return view('learning');
+});
+
+Route::get('/learning/{id}', function ($id) {
+    /*
+     * use the $id variable to query the db for a record
+     */
+
+    return view('learningPath',['id' => $id]);
+});
+
+
+
+Route::get('/user/{id}', function ($id) {
+    /*
+     * use the $id variable to query the db for a record
+     */
+
+    return view('userDetail',['id' => $id]);
+});
+
+
+
 Route::get('/test', function () {
     /*
      * This will return the linked page view only
@@ -70,4 +108,14 @@ Route::get('/test', function () {
         'age' => request ('age')
     ]);
 });
+
+Route::get('/test/{id}', function ($id) {
+    /*
+     * use the $id variable to query the db for a record
+     */
+
+
+    return view('details',['id' => $id]);
+});
+
 
