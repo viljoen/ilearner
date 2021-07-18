@@ -11,9 +11,9 @@
                 <!-- this is the  test in the middle of the screen-->
                 <p> This is a test Profile Page!</p><br>
 
-                @foreach ($test as $clients)
+                @foreach ($clients as $client)
                     <div>
-                        {{$clients->first_name}} - {{$clients->last_name}} - {{$clients->email}} - {{$clients->age}}
+                        {{$client->first_name}} - {{$client->last_name}} - {{$client->email}} - {{$client->age}}
                     </div>
                 @endforeach
 
