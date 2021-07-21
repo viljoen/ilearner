@@ -21,24 +21,25 @@
                         <label for="email"> Email:</label>
                         <input type="email" id="email" name="email">
                     </div>
-                    <div class="browser-default col s12">
-                        <label>Select Client Age:</label>
-                        <select name="age" id="age">
-                            <option value="" disabled selected>Select option</option>
-                            <option value="18">18</option>
-                            <option value="28">18</option>
-                            <option value="38">18</option>
-                            <option value="48">18</option>
-                            <option value="58">18</option>
-                        </select>
-
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix ">verified</i>
+                        <label for="age"> Age:</label>
+                        <input type="text" id="age" name="age">
                     </div>
-                    <div class="submit">
+                <div class="row">
+                    <div class="submit col s4">
                         <a class="waves-effect waves-light btn"><i class="material-icons right">person_add</i>Add Client</a>
                     </div>
-                    <div class="button">
-                    <a class="waves-effect waves-light btn" href="/client"><i class="material-icons right">view_list</i>Return</a>
+                    <div class="submit col s4">
+
                     </div>
+
+                    <div class="button col s4">
+                        <a class="waves-effect waves-light btn" href="/client"><i class="material-icons right">view_list</i>Return</a>
+                    </div>
+
+                </div>
+
 
                 </form>
 

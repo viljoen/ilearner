@@ -1,18 +1,21 @@
-<script>
-    //initializing the select option for dropdown
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-});
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-    // Or with jQuery
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
 
-    $(document).ready(function(){
-    $('select').formSelect();
-});
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
 
-</script>
 
-<script>
-    var instance = M.FormSelect.getInstance(elem);
-</script>
+

@@ -19,6 +19,7 @@
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/ilearner.js"></script>
+
 @include('scripts.scripts')
 </body>
 <footer>
