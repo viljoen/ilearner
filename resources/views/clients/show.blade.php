@@ -22,9 +22,9 @@
                     <div class="card-action">
                         <a href="/client">Return to Clients</a>
                     </div>
-                    </div>
-                    </div>
-                </div>
+                 </div>
+             </div>
+        </div>
 
 
 

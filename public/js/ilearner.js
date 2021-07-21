@@ -17,5 +17,10 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+M.AutoInit();
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+});
 
