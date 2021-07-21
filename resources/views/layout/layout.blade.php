@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/css/materialize.min.css" rel="stylesheet">
     <link   href="/css/ilearner.css" rel="stylesheet">
+    <link href="/css/material.min.css" rel="stylesheet">
 
  </head>
 
@@ -19,6 +20,7 @@
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/ilearner.js"></script>
+<script type="text/javascript" src="js/material.min.js"></script>
 
 @include('scripts.scripts')
 </body>

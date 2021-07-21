@@ -1,21 +1,41 @@
+
+// Accordian
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
         this.classList.toggle("active");
-
-        /* Toggle between hiding and showing the active panel */
         var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
         } else {
-            panel.style.display = "block";
+            panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
 }
 
-M.AutoInit();
+
+
+//Tabs
+var instance = M.Tabs.init(el, options);
+
+//Tabs Method
+var instance = M.Tabs.getInstance(elem);
+
+// Tabs show tab that corresponds to the tab with the id
+instance.select('tab_id');
+
+// Tabs Recalculate Tabs indicator
+instance.updateTabIndicator();
+
+// Collaspsible
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+});
+
+
+
 
