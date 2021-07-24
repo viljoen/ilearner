@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 
 @section('content')
     <div class="container">
@@ -6,8 +6,7 @@
             <div class="col s12 m12 l12">
                <h1> Find your clients!</h1><br>
             </div>
-
-        </div>
+     </div>
         <div class="row">
             <div class="col s8">
                 <form>
@@ -35,7 +34,7 @@
         </div>
         <div class="row">
             <div class="col s12 m12 l12">
-
+            <p class="mssg">{{session('mssg')}}</p>
                 @foreach ($clients as $client)
                 <button class="accordion"><i class="material-icons">account_circle</i>  {{$client->first_name}} {{$client->last_name}} - {{$client->email}}</button>
                 <div class="panel">
@@ -61,6 +60,11 @@
                                             <li>{{$client->last_name}}</li>
                                             <li>{{$client->email}}</li>
                                             <li>{{$client->age}}</li>
+                                            <ul>
+                                                @foreach($client->interests as $interest)
+                                                    <li>{{$interest}}</li>
+                                                @endforeach
+                                            </ul>
                                             <li>{{$client->created_at}}</li>
                                         </ul>
                                     </div>

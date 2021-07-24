@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 
 @section('content')
     <div class="container">
@@ -22,20 +22,35 @@
                     <div class="card-action">
                         <a href="/client">Return to Clients</a>
                     </div>
+
+
                  </div>
              </div>
         </div>
-
-
-
-
-
+        <div class="row">
+            <div class="col s4">
 
             </div>
-            <div class="back-left dark:text-white">
-                <a href="/client" ><- back to all clients</a>
+            <div class="col s4">
+
+            </div>
+            <div class="col s4">
+                <form action="/client/{{$clients->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="button right">
+                        <button class="waves-effect waves-light btn"><i class="material-icons right">delete_forever</i>Delete</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
 @endsection
 

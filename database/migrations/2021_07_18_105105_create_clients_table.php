@@ -19,6 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('age')->nullable();
+            $table->json('interests')->nullable();
             $table->timestamps();
         });
     }

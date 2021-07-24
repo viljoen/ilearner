@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientsController;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,9 +55,11 @@ Route::get('/user/{id}', function ($id) {
     return view('userDetail',['id' => $id]);
 });
 
-Route::get('/client', [ClientsController::class, 'index']);
-Route::get('/client/create', [ClientsController::class, 'create']);
-Route::get('/client/{id}', [ClientsController::class, 'show']);
+Route::get('/client', [ClientController::class, 'index']);
+Route::get('/client/create', [ClientController::class, 'create']);
+Route::post('/client',[ClientController::class, 'store'])->name('client.store');
+Route::get('/client/{id}', [ClientController::class, 'show']);
+Route::delete('/client/{id}', [ClientController::class, 'destroy'])->name('client.destroy');
 
 
 
@@ -129,3 +132,7 @@ Route::get('/test/{id}', [TestController::class, 'show']);
      */
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -15,8 +15,8 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
-
-
+//Auto Init
+M.AutoInit();
 //Tabs
 var instance = M.Tabs.init(el, options);
 
@@ -28,6 +28,7 @@ instance.select('tab_id');
 
 // Tabs Recalculate Tabs indicator
 instance.updateTabIndicator();
+
 
 // Collaspsible
 
