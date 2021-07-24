@@ -11,13 +11,26 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/material.min.js') }}" defer></script>
+    <script src="{{ asset('js/materialize.min.js') }}" defer></script>
+    <script src="{{ asset('js/ilearner.js.js') }}" defer></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/ilearner.js"></script>
+    <script type="text/javascript" src="js/material.min.js"></script>
+    @include('scripts.scripts')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/materialize.min.css" rel="stylesheet">
+    <link   href="/css/ilearner.css" rel="stylesheet">
+    <link href="/css/material.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -79,5 +92,8 @@
             @yield('content')
         </main>
     </div>
+
+
+
 </body>
 </html>
