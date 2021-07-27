@@ -55,10 +55,15 @@ Route::get('/user/{id}', function ($id) {
     return view('userDetail',['id' => $id]);
 });
 
-Route::get('/client', [ClientController::class, 'index']);
-Route::get('/client/create', [ClientController::class, 'create']);
+/*
+ * Route::get('/client', [ClientController::class, 'index'])->name('client.index')->middleware('auth');
+ * ->middleware('auth') will automatically require login prior to access
+ */
+
+Route::get('/client', [ClientController::class, 'index'])->name('client.index');
+Route::get('/client/create', [ClientController::class, 'create'])->name('client.create');
 Route::post('/client',[ClientController::class, 'store'])->name('client.store');
-Route::get('/client/{id}', [ClientController::class, 'show']);
+Route::get('/client/{id}', [ClientController::class, 'show'])->name('client.show');
 Route::delete('/client/{id}', [ClientController::class, 'destroy'])->name('client.destroy');
 
 
@@ -133,6 +138,6 @@ Route::get('/test/{id}', [TestController::class, 'show']);
 
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');

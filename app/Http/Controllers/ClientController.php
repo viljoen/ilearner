@@ -10,6 +10,12 @@ use mysql_xdevapi\Exception;
 class ClientController extends Controller
 {
     /*
+     * this function ensures that all functions are only accessible when access by an authenticated account
+     */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    /*
           * This function is for the landing page of each section
           */
     public function index(){

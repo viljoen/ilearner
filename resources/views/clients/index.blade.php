@@ -27,7 +27,7 @@
             </div>
             <div class="col s4">
                 <div class="button right">
-                    <a class="waves-effect waves-light btn" href="/client/create"><i class="material-icons right">person_add</i>Add Client</a>
+                    <a class="waves-effect waves-light btn" href="{{route('client.create')}}"><i class="material-icons right">person_add</i>Add Client</a>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                                         </ul>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
-                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/client/{{$client->id}}">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{route('client.show',$client->id)}}">
                                             Edit
                                         </a>
                                     </div>

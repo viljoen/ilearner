@@ -20,7 +20,7 @@
                         <p> Date Created: {{$clients->created_at}}</p>
                     </div>
                     <div class="card-action">
-                        <a href="/client">Return to Clients</a>
+                        <a href="{{route('client.index')}}">Return to Clients</a>
                     </div>
 
 
@@ -35,7 +35,7 @@
 
             </div>
             <div class="col s4">
-                <form action="/client/{{$clients->id}}" method="POST">
+                <form action="{{route('client.destroy', $clients->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <div class="button right">
